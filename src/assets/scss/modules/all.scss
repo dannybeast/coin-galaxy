@@ -6,7 +6,6 @@
 }
 
 
-
 .menu-button {
 
     width: 60px;
@@ -78,11 +77,14 @@
     font-size: rem(30px);
     line-height: 1.3;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     color: #1a3a63;
     font-family: $accentFont;
+    text-align: center;
 
     &--lines {
+        font-weight: 700;
+
         span {
             position: relative;
             display: inline-block;
@@ -156,6 +158,9 @@
     }
 }
 
+
+
+// news
 .news-intro {
     padding: 0;
     color: #fff;
@@ -331,6 +336,10 @@
     }
 }
 
+//-
+
+
+
 .pagination {
     display: inline-flex;
     align-items: center;
@@ -409,7 +418,51 @@
     }
 }
 
+.start-wrap {
+    background: rgb(1, 44, 93);
+    background: radial-gradient(circle, rgba(1, 44, 93, 1) 0%, rgba(0, 26, 55, 1) 100%);
+    color: #fff;
+    padding-top: rem(100px);
+    padding-bottom: rem(10px);
 
+    &__title {
+        text-align: center;
+        font-size: rem(37px);
+        text-transform: uppercase;
+        max-width: 730px;
+        line-height: 1.4;
+        font-family: $accentFont;
+        font-weight: 700;
+        margin: 0 auto;
+    }
+
+    .s-title {
+        color: #fff;
+
+        span {
+
+            &:before,
+            &:after {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .start {
+        .btn {
+            &--primary {
+                background: #e0e3e8;
+                color: $primary-color;
+
+                &:hover {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+
+//
 .faq {
     padding-top: 0;
 }
@@ -488,6 +541,8 @@ $accordion-horzPadding: rem(12px);
 //
 
 .refferal {
+    padding-bottom: rem(90px);
+
     &__row {
         display: flex;
     }
@@ -504,5 +559,44 @@ $accordion-horzPadding: rem(12px);
         width: 490px;
         flex-shrink: 0;
         margin-left: 90px;
+    }
+}
+
+.advantages-item {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        width: rem(135px);
+        height: rem(135px);
+        background-color: #e0e3e8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+        margin-right: rem(25px);
+
+        img {
+            width: rem(60px);
+        }
+    }
+}
+
+.advantages {
+    .s-title {
+        margin-bottom: 60px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -90px;
+    }
+
+    &__col {
+        width: 50%;
+        margin-bottom: 90px;
+        padding: 0;
     }
 }
