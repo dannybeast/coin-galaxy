@@ -183,6 +183,12 @@
 
         li {
             margin: 0 rem(15px);
+
+            &.active {
+                a {
+                    color: $warning-color;
+                }
+            }
         }
 
         a {

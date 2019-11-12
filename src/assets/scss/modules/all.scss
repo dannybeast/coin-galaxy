@@ -486,3 +486,23 @@ $accordion-horzPadding: rem(12px);
 }
 
 //
+
+.refferal {
+    &__row {
+        display: flex;
+    }
+
+    .typography {
+        font-size: 14px;
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    &__image {
+        width: 490px;
+        flex-shrink: 0;
+        margin-left: 90px;
+    }
+}

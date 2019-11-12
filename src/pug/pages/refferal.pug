@@ -1,0 +1,38 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy refferal program';
+    - var pageClass = 'refferal';
+
+block content
+
+    +b.SECTION.breadcrumbs
+        .container
+            a(href="/") Home 
+            span / 
+            span.color-warning Refferal program
+
+    +b.SECTION
+        .container
+            +b.H1.page-title Refferal <span class="color-warning">program</span>
+
+    +b.SECTION.refferal
+        .container
+            +e.row
+                +e.content.typography
+                    p 
+                        strong Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+                    p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Make the most out of your trading bot with our leading API and its low latency data and execution feeds. Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+                    p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Make the most out of your trading bot with our leading API and its low latency data and execution feeds. Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Make the most out of your trading bot with our leading API and its low latency data and execution feeds. Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Make the most out of your trading bot with our leading API and its low latency data and execution feeds.
+                
+                +e.image
+                    img(src="assets/images/refferal.png", alt="")
+
+    +b.SECTION.start-wrap
+        .container
+            include ../includes/modules/start
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/app.js")
