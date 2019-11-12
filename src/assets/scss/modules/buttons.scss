@@ -1,0 +1,77 @@
+// кнопка
+.btn {
+    position: relative;
+    cursor: pointer;
+    border: solid 2px transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    background: $neutral-regular;
+    padding: rem(16px) rem(48px);
+
+    font-family: $accentFont;
+    line-height: 1;
+    font-size: rem(24px);
+    text-transform: uppercase;
+    font-weight: 500;
+
+    border-radius: rem(50px);
+    transition: all .2s ease;
+    color: #fff;
+    $parent: &;
+
+    &:active {
+        transform: scale(0.96);
+    }
+
+    &--primary {
+        background: $primary-color;
+
+        &:hover {
+            background: darken($primary-color, 5%);
+            color: #fff;
+        }
+    }
+
+    &--warning {
+        background: $warning-color;
+
+        &:hover {
+            background: lighten($warning-color, 5%);
+            color: #fff;
+        }
+    }
+
+    &--line-warning {
+        background: transparent;
+        border: solid 2px $warning-color;
+
+        &:hover {
+            background: $warning-color;
+        }
+    }
+
+    &--line-white {
+        background: transparent;
+        border: solid 2px #fff;
+
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &.disabled {
+        border: 1px solid $neutral-regular;
+        background-color: $neutral-regular;
+
+        cursor: default;
+        pointer-events: none;
+    }
+}

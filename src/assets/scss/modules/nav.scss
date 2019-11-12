@@ -1,0 +1,33 @@
+.nav {
+    a {
+        text-transform: uppercase;
+        font-size: rem(12px);
+        text-decoration: none;
+        letter-spacing: rem(0.72px);
+        padding: rem(10px) 0;
+        display: block;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            color: $warning-color;
+        }
+    }
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        margin-right: rem(50px);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active {
+            a {
+                border-color: $warning-color;
+            }
+        }
+    }
+}

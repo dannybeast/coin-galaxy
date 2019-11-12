@@ -1,0 +1,5 @@
+mixin btn-link(link, name, cl)
+  +b.A(href=link, class="btn "+cl+"")&attributes(attributes) #{name}
+
+mixin btn(name, cl)
+  +b.BUTTON(class="btn "+cl+"")&attributes(attributes) #{name}

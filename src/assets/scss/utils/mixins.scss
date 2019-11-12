@@ -1,0 +1,45 @@
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+// Усечение текста @include truncate(100%);
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// width height element
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Placeholder prefix
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content
+  }
+
+  :-moz-placeholder {
+    @content
+  }
+
+  ::-moz-placeholder {
+    @content
+  }
+
+  :-ms-input-placeholder {
+    @content
+  }
+}

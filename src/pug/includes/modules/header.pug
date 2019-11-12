@@ -1,0 +1,41 @@
++b.HEADER.header
+  +e.left
+    +e.A(href="/" class="logo")
+      img(src="assets/images/logo.png", alt="Coin Galaxy")
+
+  +e.center
+    +e.help-links
+      ul
+        li
+          a(href="#") Live trading
+        li
+          a(href="#") Token listing
+        li
+          a(href="#") S.M.A.R.T.
+      ul
+        li
+          a(href="#") Help
+        li
+          a(href="#") More
+
+    include nav
+
+  +e.right
+    +b.language
+      +e.current
+        img(src="assets/images/lang/en.png", alt="EN")
+      +e.dropdown
+        ul
+          li
+            a(href="#")
+              img(src="https://picsum.photos/id/230/25/17", alt="EN")
+          li
+            a(href="#")
+              img(src="https://picsum.photos/id/235/25/17", alt="EN")
+          li
+            a(href="#")
+              img(src="https://picsum.photos/id/232/25/17", alt="EN")
+
+    +e.buttons
+      +btn-link('#', 'Sign up', '--line-warning')
+      +btn-link('#', 'Log in', '--line-white')
