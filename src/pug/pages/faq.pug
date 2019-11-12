@@ -1,0 +1,41 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy FAQ';
+    - var pageClass = 'faq';
+
+block content
+
+    +b.SECTION.breadcrumbs
+        .container
+            a(href="/") Home 
+            span / 
+            span.color-warning FAQ
+
+    +b.SECTION
+        .container
+            +b.H1.page-title Coingalaxy <span class="color-warning">faq</span>
+
+    +b.SECTION.faq
+        .container
+            +b.UL.accordion
+                mixin item(title)
+                    +e.LI.item
+                        +e.A(class="trigger")(data-accordion='trigger') #{title}
+                        div(data-accordion='content-container')
+                            +e.content(data-accordion='content') Thanks to the modern, reliable and comfortable investment resource of the ScandTrade, specialists of our company, who conduct their activities from the main office in Copenhagen, can accept investments from any corner of our planet and effectively use them in the progressive crypto market. The company has been starting since 2017, when crypto and blockchain technologies become a promising destination for earnings. With many years of experience in trading in global markets, our specialists have organically embedded in a new direction and have developed their unique strategies for carrying out transactions with crypto currencies by trial and error.
+
+                +item('Can I buy bitcoins through Paypal?')
+                +item('Where can I find the Bitcoin user forum?')
+                +item('How are new Bitcoins created?')
+                +item('How many Bitcoins exist now?')
+                +item('How many parts is Bitcoin divided into?')
+                +item('What do I call the shares of Bitcoin?')
+                +item('How will the block reward decrease when it reaches very low values?')
+
+    include ../includes/modules/start
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/app.js")

@@ -1,5 +1,5 @@
 // Font
-$mainFont: "Montserrat",
+$mainFont: "SF UI Display",
 Helvetica,
 Arial,
 sans-serif;
@@ -11,13 +11,15 @@ sans-serif;
 // Size
 $mainFontColor: #000;
 $mainFontSize: 16px;
-$mainFontWeight: 400;
-$mainLineHeight: 1.6;
+$mainFontWeight: 300;
+$mainLineHeight: 1.8;
 
+$desktop-xl: 1600px;
+$desktop-lg: 1366px;
 $desktop: 1260px;
 $tablet: 1024px;
 $tablet-sm: 768px;
-$phone: 480px;
+$phone: 600px;
 $phone-xs: 320px;
 
 // Main color
@@ -36,7 +38,7 @@ $neutral-secondary: #e0e3e8;
 $neutral-placeholder: #f0f1f6;
 
 // Border Color
-$border-base: #dcdfe6;
+$border-base: #ccd0d4;
 $border-light: #e4e7ed;
 $border-lighter: #ebeef5;
 $border-lightex: #f2f6fc;

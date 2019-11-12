@@ -1,5 +1,8 @@
 // JS
 import './js/modules/language';
+import './js/modules/mobile-menu';
+
+import './js/modules/accordion';
 
 // SCSS
 import './assets/scss/main.scss'

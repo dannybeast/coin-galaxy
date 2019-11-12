@@ -1,0 +1,37 @@
+extends ../layout/main
+
+block variables
+  - var title = 'COINGALAXY';
+  - var description = 'Coingalaxy News';
+  - var pageClass = 'news';
+
+block content
+
+  +b.SECTION.breadcrumbs
+    .container
+      a(href="/") Home 
+      span / 
+      span.color-warning News
+
+  +b.SECTION
+    .container
+      +b.H1.page-title Coingalaxy <span class="color-warning">News</span>
+  
+  +b.SECTION.news-list
+    .container
+      +news-item('assets/images/test-images/2.jpg')
+      +news-item('assets/images/test-images/3.png')
+      +news-item('assets/images/test-images/4.png')
+      +news-item('assets/images/test-images/2.jpg')
+      +news-item('assets/images/test-images/3.png')
+      +news-item('assets/images/test-images/4.png')
+  
+  +b.SECTION.pagination-wrap
+    .container
+      include ../includes/modules/pagination
+
+  include ../includes/modules/start
+
+block script
+  script(src="assets/js/vendors.js")
+  script(src="assets/js/app.js")

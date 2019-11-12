@@ -78,7 +78,7 @@
         left: -5px;
         background: $primary-color;
         padding: 5px;
-        padding-top: 15px;
+        padding-top: 5px;
         display: none;
         z-index: 5;
 
@@ -90,7 +90,8 @@
 
 .header {
     padding: rem(45px) rem(80px);
-    background: $primary-color;
+    background: url('/assets/images/header.png') center no-repeat $primary-color;
+    background-size: cover;
     color: #fff;
 
     display: flex;
@@ -100,6 +101,15 @@
     a {
         color: #fff;
         font-family: $accentFont;
+    }
+
+    .menu-button {
+        display: none;
+        margin-left: 30px;
+
+        @media (max-width: $desktop) {
+            display: flex;
+        }
     }
 
     &__logo {
@@ -115,6 +125,10 @@
 
     .language {
         margin: 0 rem(60px) 0 auto;
+
+        @media (max-width: 1300px) {
+            margin: 0 rem(30px) 0 auto;
+        }
     }
 
     &__buttons {
@@ -128,6 +142,8 @@
             font-size: rem(12px);
             padding: rem(15px) rem(20px);
             font-weight: 700;
+            font-family: $mainFont;
+            letter-spacing: 1px;
 
             &--line-warning {
                 color: #fff;
@@ -144,11 +160,15 @@
         width: 20%;
         display: flex;
         align-items: center;
+
+        @media (max-width: $desktop-xl) {
+            width: auto;
+        }
     }
 
     &__center {
         position: relative;
-        margin: rem(10px) auto 0;
+        margin: rem(8px) auto 0;
     }
 
     &__help-links {
@@ -182,4 +202,23 @@
         }
     }
 
+    @media (max-width: $desktop-xl) {
+        padding: rem(45px) 30px;
+    }
+
+    @media (max-width: $desktop) {
+        padding: 15px !important;
+
+        &__center {
+            display: none;
+        }
+    }
+
+    @media (max-width: $phone) {
+
+        .language,
+        &__buttons {
+            display: none;
+        }
+    }
 }

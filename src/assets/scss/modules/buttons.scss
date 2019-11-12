@@ -10,6 +10,7 @@
     text-align: center;
     background: $neutral-regular;
     padding: rem(16px) rem(48px);
+    color: #000;
 
     font-family: $accentFont;
     line-height: 1;
@@ -18,8 +19,7 @@
     font-weight: 500;
 
     border-radius: rem(50px);
-    transition: all .2s ease;
-    color: #fff;
+    transition: all .1s ease;
     $parent: &;
 
     &:active {
@@ -28,6 +28,7 @@
 
     &--primary {
         background: $primary-color;
+        color: #fff;
 
         &:hover {
             background: darken($primary-color, 5%);
@@ -37,6 +38,7 @@
 
     &--warning {
         background: $warning-color;
+        color: #fff;
 
         &:hover {
             background: lighten($warning-color, 5%);
@@ -56,6 +58,7 @@
     &--line-white {
         background: transparent;
         border: solid 2px #fff;
+        color: #fff;
 
         &:hover {
             background: #fff;

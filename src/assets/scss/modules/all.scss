@@ -5,8 +5,78 @@
     }
 }
 
+
+
+.menu-button {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__inner {
+        width: 30px;
+        height: 23px;
+        display: block;
+        position: relative;
+        margin: 0px;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            background: #fff;
+
+            &:nth-child(1) {
+                top: 0px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(2) {
+                top: 10px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(3) {
+                top: 20px;
+                transform-origin: left center;
+            }
+        }
+
+        &.open span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                top: 0px;
+                left: 8px;
+            }
+
+            &:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 21px;
+                left: 8px;
+            }
+        }
+    }
+}
+
 .s-title {
     font-size: rem(30px);
+    line-height: 1.3;
     text-transform: uppercase;
     font-weight: 700;
     color: #1a3a63;
@@ -72,7 +142,14 @@
     font-family: $accentFont;
     font-weight: 500;
 
+    a {
+        @extend .link;
+    }
+
     .container {
+        overflow-x: auto;
+        width: 100%;
+
         &>* {
             margin: 0 rem(5px);
         }
@@ -164,6 +241,135 @@
     }
 }
 
+.news-item {
+    display: flex;
+    color: #000;
+    border-bottom: 1px solid $border-base;
+    padding-bottom: rem(40px);
+    padding-top: rem(40px);
+
+    &__title {
+        font-size: rem(25px);
+        line-height: 1.4;
+        font-family: $accentFont;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: rem(10px);
+    }
+
+    &__date {
+        line-height: 1;
+        font-size: rem(16px);
+        font-family: $accentFont;
+        opacity: 0.5;
+        margin-bottom: 10px;
+        color: #656e25;
+    }
+
+    &__buttons {
+        margin-top: rem(20px);
+        display: flex;
+        align-items: center;
+        margin-bottom: -10px;
+        margin-right: -10px;
+        margin-left: -10px;
+
+        &>* {
+            margin: 10px;
+        }
+    }
+
+    .btn {
+        font-size: rem(14px);
+        font-weight: 700;
+        padding: rem(14px) rem(30px);
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &__image {
+        width: rem(344px);
+        flex-shrink: 0;
+        margin-left: rem(60px);
+        margin-top: 5px;
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        @media (max-width: $tablet) {
+            margin-left: rem(30px);
+        }
+    }
+
+    @media (max-width: $tablet-sm) {
+        flex-wrap: wrap;
+
+        &__image {
+            margin: 0;
+            width: 100%;
+            order: -1;
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.news-list {
+    padding-top: 0;
+
+    .news-item {
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+}
+
+.pagination {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: solid 2px #000;
+    border-radius: rem(30px);
+    overflow: hidden;
+
+    &-wrap {
+        text-align: center;
+    }
+
+    a {
+        font-weight: 700;
+        color: #000;
+        font-size: rem(17px);
+        line-height: 1;
+        padding: rem(15px) rem(20px);
+
+        &:first-child {
+            padding-left: rem(30px);
+        }
+
+        &:last-child {
+            padding-right: rem(30px);
+        }
+
+        &:hover {
+            background: $border-base;
+        }
+
+        &.active {
+            color: #fff;
+            background: $warning-color;
+        }
+    }
+}
+
 .start {
     text-align: center;
     padding-top: rem(90px);
@@ -185,7 +391,7 @@
         }
     }
 
-    @media (max-width: $phone) {
+    @media (max-width: $tablet-sm) {
         .s-title {
             margin-bottom: rem(30px);
         }
@@ -202,3 +408,81 @@
         }
     }
 }
+
+
+.faq {
+    padding-top: 0;
+}
+
+//
+$accordion-horzPadding: rem(12px);
+
+[data-accordion="content-container"] {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.1s linear;
+}
+
+.accordion {
+    padding: 0;
+    margin: 0 auto;
+    border: $border-base;
+    list-style-type: none;
+
+    &__item {
+        &:not(:first-child) {
+            border-top: $border-base;
+        }
+    }
+
+    &__trigger {
+        display: block;
+        position: relative;
+        padding: rem(25px) $accordion-horzPadding;
+        line-height: 1.3;
+        font-size: rem(24px);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #001326;
+        font-weight: 300;
+        border-bottom: 1px solid $border-base;
+        cursor: pointer;
+        user-select: none;
+        padding-left: rem(100px);
+
+        @media (max-width: $desktop) {
+            padding-left: rem(60px);
+        }
+
+        &:hover {
+            color: $warning-color;
+        }
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            content: '';
+            width: 29px;
+            height: 15px;
+            background: svg-load('../icons/arrow.svg', fill=#bec3c7);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(-90deg) translateX(50%);
+        }
+
+        &.is-collapsed {
+            border-color: transparent;
+
+            &::after {
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+    }
+
+    &__content {
+        padding: 10px $accordion-horzPadding 16px;
+    }
+}
+
+//

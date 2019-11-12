@@ -3,3 +3,17 @@ mixin btn-link(link, name, cl)
 
 mixin btn(name, cl)
   +b.BUTTON(class="btn "+cl+"")&attributes(attributes) #{name}
+
+
+//
+mixin news-item(src)
+  +b.A(href="news-details.html", class="news-item")
+    +e.content
+      +e.P.date 01/03/19
+      +e.P.title What is a slot in each plan?
+      +e.desc
+        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
+      +e.buttons
+        +b.SPAN.btn(class="--line-warning") Read more
+    +e.image
+      img(src=src, alt="")
