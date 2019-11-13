@@ -1,0 +1,26 @@
+include ../bemto-master/bemto.pug
+-
+  set_bemto_settings({
+    prefix: '',
+    element: '__',
+    modifier: '--'
+  })
+include ../utils/mixins
+
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title}
+    meta(name="description", content=description)
+    link(rel="stylesheet" href="assets/css/app.css")
+    block head
+
+body
+    #app
+        block content
+
+block script

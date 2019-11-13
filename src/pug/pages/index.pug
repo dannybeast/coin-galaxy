@@ -2,40 +2,214 @@ extends ../layout/main
 
 block variables
   - var title = 'COINGALAXY';
-  - var description = 'Coingalaxy News';
-  - var pageClass = 'news';
+  - var description = 'Coingalaxy';
+  - var pageClass = 'home';
 
 block content
 
-  +b.SECTION.breadcrumbs
+  +b.SECTION.intro
+    include ../includes/modules/header
+    +header()
     .container
-      a(href="/") Home 
-      span / 
-      span.color-warning News
 
-  +b.SECTION
+  +b.SECTION.events
     .container
-      +b.H1.page-title Coingalaxy <span class="color-warning">News</span>
-  
-  +b.SECTION.news-intro
-    .container
-      +e.wrap
-        +e.bottom
-          +e.H3.title What is a slot in each plan?
-          +e.P.date 01/03/19
-        img(src="assets/images/test-images/1.jpg", alt="")
+      ul
+        li
+          +b.A(href="#").event
+            +e.date
+              big 21
+              span Oct. 2019
+            +e.P.title Stealth Coming Soon
+        li
+          +b.A(href="#").event
+            +e.date
+              big 21
+              span Oct. 2019
+            +e.P.title Delisting REP & WTC
+        li
+          +b.A(href="#").event
+            +e.date
+              big 21
+              span Oct. 2019
+            +e.P.title Stealth Coming Soon
 
-  +b.SECTION.content
+  +b.SECTION.course-module
     .container
-      .typography
-        p
-          big
-            strong Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
-        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
-        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
-        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
-        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
-  
+
+      +e.block
+        +b.s-arrow(class="--prev")
+        .js-course-slider
+          +b.course-item
+            +e.icon
+              img(src="assets/images/currency/btc.png", alt="")
+            +e.content
+              +e.top
+                +e.P.title BTC/USD
+                +e.P.status(class="--green") +2.41%
+              +e.desc
+                p 24H volume 0.00000000 BTC 
+          +b.course-item
+            +e.icon
+              img(src="assets/images/currency/ltc.png", alt="")
+            +e.content
+              +e.top
+                +e.P.title LTC/BTC
+                +e.P.status(class="--green") +2.41%
+              +e.desc
+                p 24H volume 0.00000000 BTC 
+          +b.course-item
+            +e.icon
+              img(src="assets/images/currency/eth.png", alt="")
+            +e.content
+              +e.top
+                +e.P.title ETH/USD
+                +e.P.status(class="--green") +2.41%
+              +e.desc
+                p 24H volume 0.00000000 BTC 
+          +b.course-item
+            +e.icon
+              img(src="assets/images/currency/wtp.png", alt="")
+            +e.content
+              +e.top
+                +e.P.title WTP/USD
+                +e.P.status(class="--red") -2.41%
+              +e.desc
+                p 24H volume 0.00000000 BTC 
+          +b.course-item
+            +e.icon
+              img(src="assets/images/currency/wtp.png", alt="")
+            +e.content
+              +e.top
+                +e.P.title WTP/USD
+                +e.P.status(class="--red") -2.41%
+              +e.desc
+                p 24H volume 0.00000000 BTC 
+        +b.s-arrow(class="--next")
+  +b.SECTION.trading
+    .container
+      +b.filter
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="BTC", checked)
+          span BTC
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="ETH")
+          span ETH
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="LTC")
+          span LTC
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="USD")
+          span USD
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="RUR")
+          span RUR
+        +b.LABEL.radio-button
+          input(type="radio", name="trading-filter", value="Other")
+          span Other
+      
+      +e.table( ss-container)
+        table.table.js-datatable
+          thead
+            tr
+              th Pair
+              th Volume (24h)
+              th Last price
+              th Change (24h)
+              th High (24h)
+              th Low (24h)
+              th Price Graph (7d)
+              th Trading Page
+          tbody
+            mixin tr()
+              tr
+                td 
+                  +b.pair
+                    img(src="assets/images/currency/iex.png", alt="")
+                    strong IEX/BTC
+                td 0.02 BTC
+                td 8 495.90899 USD
+                td 
+                  +b.P.status(class="--orange") -1.09%
+                td 0.0000011 BTC
+                td 0.0000011 BTC
+                td
+                  +b.graph
+                    
+                td
+                  +b.A(href="#", class="btn --warning")
+                    span Trade
+              tr
+                td 
+                  +b.pair
+                    img(src="assets/images/currency/btc2.png", alt="")
+                    strong BTC/USD
+                td 1 909.41 BTC
+                td 8 495.90899 USD
+                td 
+                  +b.P.status(class="--green") +4.09%
+                td 8 700 USD
+                td 8 700 USD
+                td
+                  +b.graph
+                td
+                  +b.A(href="#", class="btn --warning")
+                    span Trade
+            +tr()
+            +tr()
+            +tr()
+            +tr()
+            +tr()
+            +tr()
+      +e.buttons
+        +btn-link('#', 'Show more', '--primary')
+
+  +b.SECTION.s-icons
+    .container
+      +e.row
+          +e.col
+              +b.earn-item
+                  +e.icon
+                      img(src="assets/icons/shield.svg", alt="")
+                  +e.P.title Safe and secure
+                  +e.desc
+                      p 2-factor authentication, advanced encryption technology, cold storage – we give you peace of mind when it comes to security.
+          +e.col
+              +b.earn-item
+                  +e.icon
+                      img(src="assets/icons/clock.svg", alt="")
+                  +e.P.title Fast, responsive and feature-packed
+                  +e.desc
+                      p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+          +e.col
+              +b.earn-item
+                  +e.icon
+                      img(src="assets/icons/gear.svg", alt="")
+                  +e.P.title Robot-friendly API
+                  +e.desc
+                      p Make the most out of your trading bot with our leading API and its low latency data and execution feeds.
+                      
+
+  +b.SECTION.how-work
+    .container
+      +e.row
+          +e.image
+            img(src="assets/images/notebook.jpg", alt="")
+          +e.content
+            +b.H3.s-title How it works?
+            .typography
+              p
+                strong Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+              p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. Make the most out of your trading bot with our leading API and its low latency data and execution feeds.
+
+            ul.warning-list 
+              li 
+                a(href="faq.html") Visit FAQ
+              li 
+                a(href="contacts.html") Contact our multilingual support
+              li 
+                a(href="news.html") Check our blog for news
+
   include ../includes/modules/start
 
 block script

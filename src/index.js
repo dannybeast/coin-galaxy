@@ -1,9 +1,11 @@
 // JS
+import SimpleScrollbar from 'simple-scrollbar';
+
 import './js/modules/language';
 import './js/modules/mobile-menu';
-
+import './js/modules/sliders';
 import './js/modules/accordion';
-
+import './js/modules/datatables';
 // SCSS
 import './assets/scss/main.scss'
 

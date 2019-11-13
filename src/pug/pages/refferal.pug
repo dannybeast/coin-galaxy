@@ -6,14 +6,15 @@ block variables
     - var pageClass = 'refferal';
 
 block content
-
+    include ../includes/modules/header
+    +header()
     +b.SECTION.breadcrumbs
         .container
             a(href="/") Home 
             span / 
             span.color-warning Refferal program
 
-    +b.SECTION
+    +b.SECTION.page-title-section
         .container
             +b.H1.page-title Refferal <span class="color-warning">program</span>
 
@@ -28,9 +29,44 @@ block content
                 
                 +e.image
                     img(src="assets/images/refferal.png", alt="")
+
+    +b.SECTION.s-icons(class="--earn")
+        .container
+            +b.H3.s-title How to earn with coingalaxy
+            +e.row
+                +e.col
+                    +b.earn-item
+                        +e.icon
+                            img(src="assets/icons/2.svg", alt="")
+                        +e.P.title Invite traders
+                        +e.desc
+                            p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+                +e.col
+                    +b.earn-item
+                        +e.icon
+                            img(src="assets/icons/1.svg", alt="")
+                        +e.P.title trader make 1<sup>st</sup> deposit
+                        +e.desc
+                            p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+                +e.col
+                    +b.earn-item
+                        +e.icon
+                            img(src="assets/icons/3.svg", alt="")
+                        +e.P.title trader make deals
+                        +e.desc
+                            p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+                +e.col
+                    +b.earn-item
+                        +e.icon
+                            img(src="assets/icons/4.svg", alt="")
+                        +e.P.title You have earn
+                        +e.desc
+                            p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs. 
+    
+    
     +b.SECTION.advantages
         .container
-            +b.H3.s-title Our advanties
+            +b.H3.s-title Our advantages
             +e.row
                 +e.col
                     +b.advantages-item
@@ -43,27 +79,27 @@ block content
                 +e.col
                     +b.advantages-item
                         +e.icon
-                            img(src="assets/icons/shield.svg", alt="")
+                            img(src="assets/icons/clock.svg", alt="")
                         +e.content
-                            +e.P.title Safe and secure
+                            +e.P.title Fast, responsive and feature-packed
                             +e.desc
-                                p 2-factor authentication, advanced encryption technology, cold storage – we give you peace of mind when it comes to security.
+                                p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs.
                 +e.col
                     +b.advantages-item
                         +e.icon
-                            img(src="assets/icons/shield.svg", alt="")
+                            img(src="assets/icons/gear.svg", alt="")
                         +e.content
-                            +e.P.title Safe and secure
+                            +e.P.title Robot-friendly API
                             +e.desc
-                                p 2-factor authentication, advanced encryption technology, cold storage – we give you peace of mind when it comes to security.
+                                p Make the most out of your trading bot with our leading API and its low latency data and execution feeds.
                 +e.col
                     +b.advantages-item
                         +e.icon
-                            img(src="assets/icons/shield.svg", alt="")
+                            img(src="assets/icons/queue.svg", alt="")
                         +e.content
-                            +e.P.title Safe and secure
+                            +e.P.title Fast, responsive and feature-packed
                             +e.desc
-                                p 2-factor authentication, advanced encryption technology, cold storage – we give you peace of mind when it comes to security.
+                                p Our terminal is built on the best technology and lets you trade effortlessly any of the HitBTC currency pairs.
 
     +b.SECTION.start-wrap
         .container

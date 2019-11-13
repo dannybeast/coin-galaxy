@@ -90,8 +90,8 @@
 
 .header {
     padding: rem(45px) rem(80px);
-    background: url('/assets/images/header.png') center no-repeat $primary-color;
-    background-size: cover;
+    background: url('/assets/images/header.png') center top no-repeat #001a36;
+    background-size: 100%;
     color: #fff;
 
     display: flex;

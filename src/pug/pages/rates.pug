@@ -1,0 +1,30 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Exchange rates';
+    - var pageClass = 'rates';
+
+block content
+    include ../includes/modules/header
+    +header()
+    +b.SECTION.breadcrumbs
+        .container
+            a(href="/") Home 
+            span / 
+            span.color-warning Exchange rates
+
+    +b.SECTION.page-title-section
+        .container
+            +b.H1.page-title Exchange <span class="color-warning">rates</span>
+
+    +b.SECTION.rates
+        .container
+            
+                
+
+    include ../includes/modules/start
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/app.js")

@@ -1,0 +1,45 @@
+extends ../layout/login
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Registration';
+    - var pageClass = 'registration';
+
+block content
+
+    +b.form-page
+        +e.HEADER.header
+            include ../includes/modules/header
+            +header()
+        +e.content
+            +b.FORM.form-block
+                +e.H3.title Registration
+                // .field--error
+                +b.field(class="--row")
+                    label Email
+                    input(type="text")
+                +b.field(class="--row")
+                    label Phone
+                    input(type="text")
+                +b.field(class="--row")
+                    label Password
+                    input(type="password")
+                +b.field(class="--row")
+                    label Re-enter Password
+                    input(type="password")
+                +b.field(class="--row")
+                    label Enter code
+                    +e.group
+                        input(type="text")
+                        +b.captcha
+                            img(src="assets/images/test-images/captcha.png", alt="")
+                +b.field
+                    +b.LABEL.checkbox
+                        input(type="checkbox")
+                        +e.SPAN.content I’ve read  and aggree with <a href="#">Terms of Service</a> & <a href="privacy.html">Privacy Policy</a>.
+                +e.buttons
+                    +btn('Register now', '--primary')
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/app.js")

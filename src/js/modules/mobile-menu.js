@@ -2,12 +2,13 @@
 let menu_btn = "<div class='menu-button'><div class='menu-button__inner'><span></span><span></span><span></span></div></div>"
 let mob_menu = '<div class="mobile-menu"><div class="mobile-menu__buttons"><div class="container"></div></div><nav class="mobile-menu__nav container"></nav></div>'
 
+if (document.querySelector('.header .nav ul')) {
+    var header_menu = document.querySelector('.header .nav ul').cloneNode();
 
-var header_menu = document.querySelector('.header .nav ul').cloneNode();
+    document.querySelector('.header__right').insertAdjacentHTML("beforeEnd", menu_btn);
+    document.querySelector('body').insertAdjacentHTML("beforeEnd", mob_menu);
 
-document.querySelector('.header__right').insertAdjacentHTML("beforeEnd", menu_btn);
-document.querySelector('body').insertAdjacentHTML("beforeEnd", mob_menu);
-
+}
 
 // function menuPosition() {
 //     let header_height = $('.header').innerHeight();

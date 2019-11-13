@@ -31,7 +31,7 @@ module.exports = {
   },
   entry: {
     app: PATHS.src,
-    mnp: `${PATHS.src}/mnp.js`
+    lk: `${PATHS.src}/lk.js`
   },
   output: {
     // [hash]

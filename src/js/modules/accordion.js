@@ -31,7 +31,7 @@ class Accordion {
     }
 }
 
-/* Initialize */
+// Initialize
 for (const e of document.querySelectorAll('[data-accordion="trigger"]')) {
     const newAccordion = new Accordion(e);
     newAccordion;

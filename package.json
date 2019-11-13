@@ -51,6 +51,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "glider-js": "^1.7.1",
+    "simple-scrollbar": "^0.4.0",
+    "vanilla-datatables": "^1.6.16",
     "vue": "^2.6.10"
   }
 }

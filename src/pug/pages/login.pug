@@ -1,0 +1,30 @@
+extends ../layout/login
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Login';
+    - var pageClass = 'login';
+
+block content
+
+    +b.form-page
+        +e.HEADER.header
+            include ../includes/modules/header
+            +header()
+        +e.content
+            +b.FORM.form-block
+                +e.H3.title Login
+                // field--error
+                +b.field(class="--row")
+                    label Email
+                    input(type="text")
+                +b.field(class="--row")
+                    label Password
+                    input(type="password")
+
+                +e.buttons
+                    +btn('Login', '--primary')
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/app.js")

@@ -6,14 +6,15 @@ block variables
     - var pageClass = 'faq';
 
 block content
-
+    include ../includes/modules/header
+    +header()
     +b.SECTION.breadcrumbs
         .container
             a(href="/") Home 
             span / 
             span.color-warning FAQ
 
-    +b.SECTION
+    +b.SECTION.page-title-section
         .container
             +b.H1.page-title Coingalaxy <span class="color-warning">faq</span>
 
