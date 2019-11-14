@@ -20,8 +20,71 @@ block content
 
     +b.SECTION.rates
         .container
-            
-                
+
+            +e.table
+                table.table.js-datatable.responsive
+                    thead
+                        tr
+                            th Name
+                            th Comission for deposit
+                            th Comission for withdraw
+                            th Limit
+                    tbody
+                        mixin tr()
+                            tr
+                                td 
+                                    +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/payeer.png", alt="")
+                                        strong Payeer.com
+                                td USD, RUR: 0,5% EUR: 1%
+                                td EUR: 3.5%  RUR:2.5%*
+                                td 
+                                    +b.P.status(class="--orange") EUR: 10 000, RUR: 700 000
+                                
+                            tr
+                                td 
+                                    +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/pm.png", alt="")
+                                        strong Perfect Money
+                                td N/A
+                                td EUR: 3.5%
+                                td 
+                                    +b.P.status(class="--orange") EUR: 10 000, RUR: 700 000
+                            tr
+                                td 
+                                    +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/capitalist.png", alt="")
+                                        strong Capitalist
+                                td 0%
+                                td 2%
+                                td 
+                                    +b.P.status(class="--orange") EUR: 10 000, RUR: 700 000
+                            tr
+                                td 
+                                    +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/btc1.png", alt="")
+                                        strong AdvCash.com
+                                td 0.5%
+                                td USD, RUR: 3.9%  
+                                td 
+                                    +b.P.status(class="--orange") EUR: 10 000, RUR: 700 000
+                            tr
+                                td 
+                                    +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/qiwi.png", alt="")
+                                        strong Qiwi
+                                td RUR: 7%
+                                td RUR: 8.5%
+                                td 
+                                    +b.P.status(class="--orange") EUR: 10 000, RUR: 700 000
+                        +tr()
+                        +tr()
+                        +tr()
 
     include ../includes/modules/start
 

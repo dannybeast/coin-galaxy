@@ -30,10 +30,10 @@
         }
 
         @media (max-width: $phone) {
-            width: 50%;
+            width: 50% !important;
 
             &--community {
-                width: 100%;
+                width: 100% !important;
             }
         }
     }

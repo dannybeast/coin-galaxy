@@ -11,7 +11,26 @@ block content
     include ../includes/modules/header
     +header()
     .container
-
+      +b.intro-slider
+        +e.content
+          +e.s-text
+            +e.P.accent-title within 3 steps
+            +e.H2.title
+              span Open a Trade Account and 
+              strong start trade now!
+          +b.intro-steps
+            ul
+              li.active
+                +e.P.count 1
+                +e.P.name Open account
+              li
+                +e.P.count 2
+                +e.P.name Add wallets
+              li
+                +e.P.count 3
+                +e.P.name Trade!
+        +e.s-image
+          img(src="assets/images/1-open.png", alt="")
   +b.SECTION.events
     .container
       ul
@@ -125,7 +144,8 @@ block content
               tr
                 td 
                   +b.pair
-                    img(src="assets/images/currency/iex.png", alt="")
+                    +e.icon
+                      img(src="assets/images/currency/iex.png", alt="")
                     strong IEX/BTC
                 td 0.02 BTC
                 td 8 495.90899 USD
@@ -135,14 +155,15 @@ block content
                 td 0.0000011 BTC
                 td
                   +b.graph
-                    
+                    img(src="assets/images/graph.jpg", alt="")
                 td
-                  +b.A(href="#", class="btn --warning")
+                  +b.A(href="#", class="btn --warning --i-next")
                     span Trade
               tr
                 td 
                   +b.pair
-                    img(src="assets/images/currency/btc2.png", alt="")
+                    +e.icon
+                      img(src="assets/images/currency/btc1.png", alt="")
                     strong BTC/USD
                 td 1 909.41 BTC
                 td 8 495.90899 USD
@@ -152,8 +173,9 @@ block content
                 td 8 700 USD
                 td
                   +b.graph
+                    img(src="assets/images/graph.jpg", alt="")
                 td
-                  +b.A(href="#", class="btn --warning")
+                  +b.A(href="#", class="btn --warning --i-next")
                     span Trade
             +tr()
             +tr()

@@ -66,6 +66,21 @@
         }
     }
 
+    &--i-next {
+        align-items: center;
+
+        &:after {
+            content: '';
+            width: 9px;
+            height: 13px;
+            display: block;
+            background: svg-load("../icons/next.svg", fill=#fff);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: 10px;
+        }
+    }
+
     &--full {
         width: 100%;
     }

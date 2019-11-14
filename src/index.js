@@ -1,24 +1,25 @@
 // JS
+import $ from 'jquery';
 import SimpleScrollbar from 'simple-scrollbar';
+import './js/libs/jquery.viewportchecker.min';
 
 import './js/modules/language';
 import './js/modules/mobile-menu';
 import './js/modules/sliders';
 import './js/modules/accordion';
 import './js/modules/datatables';
+
 // SCSS
 import './assets/scss/main.scss'
 
-// CSS (example)
-// import './assets/css/main.css'
+document.addEventListener("DOMContentLoaded", function (event) {
+    let loader = document.querySelector('.loader');
+    loader.classList.add('hide');
+});
 
-// // Vue.js
-// window.Vue = require('vue')
-
-// // Vue components (for use in html)
-// Vue.component('example-component', require('./components/Example.vue').default)
-
-// // Vue init
-// const app = new Vue({
-//   el: '#app'
-// })
+// animate
+$('section').viewportChecker({
+    classToAdd: 'active',
+    offset: 100,
+    repeat: false
+});

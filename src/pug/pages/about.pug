@@ -1,0 +1,33 @@
+extends ../layout/main
+
+block variables
+  - var title = 'COINGALAXY';
+  - var description = 'Coingalaxy About us';
+  - var pageClass = 'about';
+
+block content
+  include ../includes/modules/header
+  +header()
+  +b.SECTION.breadcrumbs
+    .container
+      a(href="/") Home 
+      span / 
+      span.color-warning About us
+
+  +b.SECTION.page-title-section
+    .container
+      +b.H1.page-title About us
+  
+  +b.SECTION.content
+    .container
+      .typography
+        p
+          big
+            strong Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
+        p Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. Each plan in our club has a certain number of allocated slots. Slots are effectively the number of funding spots that a user is allowed to fill. You can fund your account to start making profit with the club, but if you don’t have a free slot you have to wait till one of your existing plan expires. This rule has been placed so we can effectively manage users portfolio using our strategy. 
+
+  include ../includes/modules/start
+
+block script
+  script(src="assets/js/vendors.js")
+  script(src="assets/js/app.js")

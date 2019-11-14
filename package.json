@@ -51,9 +51,10 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "datatables.net-dt": "^1.10.20",
     "glider-js": "^1.7.1",
+    "jquery": "^3.4.1",
     "simple-scrollbar": "^0.4.0",
-    "vanilla-datatables": "^1.6.16",
     "vue": "^2.6.10"
   }
 }
