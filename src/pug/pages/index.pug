@@ -31,6 +31,25 @@ block content
                 +e.P.name Trade!
         +e.s-image
           img(src="assets/images/1-open.png", alt="")
+    
+    +b.ticker
+      +e.item
+        p AUD/USD <span>1,1%</span>
+      +e.item(class="--red")
+        p EUR/GBP <span>-0,7%</span>
+      +e.item
+        p EUR/USD <span>0,9%
+      +e.item(class="--red")
+        p GBP/USD <span>-0,81%</span>
+      +e.item(class="--red")
+        p USD/CAD <span>-0,81%</span>
+      +e.item(class="--red")
+        p USD/CHF <span>-0,81%</span>
+      +e.item(class="--red")
+        p GOLD <span>-0,81%</span>
+      +e.item
+        p BTC <span>0,81%</span>
+        
   +b.SECTION.events
     .container
       ul
@@ -128,17 +147,25 @@ block content
           span Other
       
       +e.table( ss-container)
-        table.table.js-datatable
+        table.table.js-datatable-trading
           thead
             tr
-              th Pair
-              th Volume (24h)
-              th Last price
-              th Change (24h)
-              th High (24h)
-              th Low (24h)
-              th Price Graph (7d)
-              th Trading Page
+              th 
+                span Pair
+              th 
+                span Volume (24h)
+              th 
+                span Last price
+              th 
+                span Change (24h)
+              th 
+                span High (24h)
+              th 
+                span Low (24h)
+              th 
+                span Price Graph (7d)
+              th 
+                span Trading Page
           tbody
             mixin tr()
               tr

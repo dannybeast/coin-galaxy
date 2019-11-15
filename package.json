@@ -54,6 +54,7 @@
     "datatables.net-dt": "^1.10.20",
     "glider-js": "^1.7.1",
     "jquery": "^3.4.1",
+    "jquery.marquee": "^1.5.0",
     "simple-scrollbar": "^0.4.0",
     "vue": "^2.6.10"
   }

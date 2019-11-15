@@ -114,8 +114,8 @@
                         content: '';
                         width: 8px;
                         height: 8px;
-                        border-right: solid 1px #000;
-                        border-bottom: 1px solid #000;
+                        border-right: solid 2px #000;
+                        border-bottom: 2px solid #000;
                         opacity: 0.3;
                         background-size: contain;
                         display: inline-block;
@@ -135,10 +135,10 @@
                 }
             }
 
-            .sorting {
-                //background-image: url("../img/sort_both.png");
+            // .sorting {
+            //     //background-image: url("../img/sort_both.png");
 
-            }
+            // }
 
             .sorting_asc {
                 span {

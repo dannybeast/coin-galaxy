@@ -1,0 +1,75 @@
+
+mixin header-left()
+  +e.left
+    +e.A(href="/" class="logo")
+      img(src="assets/images/logo.png", alt="Coin Galaxy")
+mixin header-right()
+  +e.right
+      +b.language
+        +e.current
+          img(src="assets/images/lang/en.png", alt="EN")
+        +e.dropdown
+          ul
+            li
+              a(href="#")
+                img(src="https://picsum.photos/id/230/25/17", alt="EN")
+            li
+              a(href="#")
+                img(src="https://picsum.photos/id/235/25/17", alt="EN")
+            li
+              a(href="#")
+                img(src="https://picsum.photos/id/232/25/17", alt="EN")
+
+      +e.buttons
+        +btn-link('signup.html', 'Username', '--line-warning')
+        +btn-link('login.html', 'Logout', '--line-white')
+
+mixin header-lk()
+    +b.top-bar
+        .container
+            +e.P.info 
+                span USD Equivalent Balance: ~120.2 USD  
+                a(href="#") (What is this?)
+            +e.right
+                +b.A(href="#").notification
+                    +e.SPAN.count 10
+                    +e.SPAN.name You have 10 notifications
+                +b.A(href="#").icon-link
+                    img(src="assets/images/cash.svg", alt="")
+                    span Deposit
+    +b.HEADER.header-lk
+        .container
+            +header-left()
+
+            +e.center
+                +b.NAV.nav-lk
+                    ul
+                        li(class=(pageClass === "lk1" ? " active" : undefined))
+                            a(href="#") Account
+                        li(class=(pageClass === "lk2" ? " active" : undefined))
+                            a(href="#") BUY / SELL
+                        li(class=(pageClass === "lk6" ? " active" : undefined))
+                            a(href="#") BALANCE
+                        li(class=(pageClass === "lk4" ? " active" : undefined))
+                            a(href="#") THE GAME
+                        li(class=(pageClass === "lk5" ? " active" : undefined))
+                            a(href="#") Settings
+                        li(class=(pageClass === "lk7" ? " active" : undefined))
+                            a(href="#") HELP
+                
+            +header-right()
+    +b.podmenu-module
+        .container
+            ul
+                li
+                    a(href="#") Balance
+                li.active
+                    a(href="#") Referral Program
+                li
+                    a(href="#") History
+                li
+                    a(href="#") My Orders
+                li
+                    a(href="#") Tariff and Limits
+                li
+                    a(href="#") Exchange

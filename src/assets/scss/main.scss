@@ -7,109 +7,14 @@
 @import "modules/loader";
 
 
-html {
-  line-height: $mainLineHeight;
-  font-size: $mainFontSize;
-  color: $mainFontColor;
-  height: 100%;
-
-  @media (max-width: $desktop) {
-    font-size: 16px;
-  }
-
-  @media (max-width: $tablet) {
-    font-size: 14px;
-  }
-
-  @media (max-width: $phone) {
-    font-size: 14px;
-  }
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $mainFont;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-section,
-.section {
-  position: relative;
-  padding: rem(90px) 0;
-
-  @media (max-width: $phone) {
-    padding: rem(60px) 0;
-  }
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  padding: 0 30px;
-  max-width: $desktop;
-
-  @media (max-width: $desktop) {
-    max-width: $tablet;
-  }
-
-  @media (max-width: $tablet) {
-    max-width: 100%
-  }
-
-  @media (max-width: $phone) {
-    padding: 0 15px;
-  }
-}
+@import "modules/main";
 
 
 // Modules
-
+@import "modules/language";
 @import "modules/header";
 @import "modules/nav";
 @import "modules/buttons";
 @import "modules/fields";
-@import "modules/all";
+@import "modules/site";
 @import "modules/footer";

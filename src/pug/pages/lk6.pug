@@ -1,0 +1,76 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk6';
+    - var pageClass = 'lk6';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+
+    +b.SECTION
+        .container
+            +b.b-top
+                +e.H1.title My Orders
+                +b.filters
+                    +b.SELECT
+                        option All types
+                    +b.SELECT
+                        option Last 30 days
+                    +b.SELECT
+                        option All currencies
+            .datatable-module
+                table.table.js-datatable.responsive
+                    thead
+                        tr
+                            th 
+                                span Order ID
+                            th 
+                                span Pair
+                            th 
+                                span Type
+                            th 
+                                span Price
+                            th 
+                                span Amount
+                            th 
+                                span Value
+                            th 
+                                span Status
+                    tbody
+                        mixin tr()
+                            tr
+                                td 234234234
+                                td USD/BTC
+                                td Type
+                                td 121.32 USD
+                                td 1.32 USD
+                                td 121.32 USD
+                                td 
+                                    +b.status(class="--green") Approved
+                            tr
+                                td 234234
+                                td USD/BTC
+                                td Type
+                                td 12.32 USD
+                                td 2.32 USD
+                                td 11.32 USD
+                                td 
+                                    +b.status(class="--green") Approved
+                           
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

@@ -1,0 +1,190 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk6';
+    - var pageClass = 'lk6';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+    
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Fiat Balance
+            
+
+            +b.l-form
+                +e.H3.title Redeem a voucher
+                +e.desc
+                    p Livecoin voucher is identified by a unique code, it has pre-paid value, and it can be redeemed only once. You can buy Livecoin vouchers from our partners’ digital currencies exchange shops.
+                form
+                    +b.field(class="--row")
+                        label Voucher code:
+                        input(type="text")
+                    +btn('Redem', '--warning')
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Cryptocurrency Balance
+                +b.filter
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="BTC")
+                        span BTC
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="USD")
+                        span USD
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="ALL", checked)
+                        span ALL
+            .datatable-module
+                table.table.js-datatable.responsive
+                    thead
+                        tr
+                            th 
+                                span Currency
+                            th 
+                                span Available
+                            th 
+                                span In orders
+                            th 
+                                span Total
+                            th 
+                                span Symbol
+                            th 
+                                span Price change 24h
+                            th 
+                                span Status
+                            th
+                    tbody
+                        mixin tr()
+                            tr
+                                td 
+                                   +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/iex.png", alt="")
+                                        strong Bitcoin
+                                td
+                                    strong 0.12112
+                                td
+                                    strong 0.21314
+                                td
+                                    strong 0.21314
+                                td BTC
+                                td 
+                                    +b.status(class="--gray") + 0.25%
+                                td
+                                    +b.status-checked(class="--true")
+                                td
+                                    +b.table-buttons
+                                        +b.A(href="#", class="btn --gray") Deposit
+                                        +b.A(href="#", class="btn --line-gray") Withdrawal
+                        tr
+                                td 
+                                   +b.pair
+                                        +e.icon
+                                            img(src="assets/images/currency/btc1.png", alt="")
+                                        strong Bitcoin
+                                td
+                                    strong 0.12112
+                                td
+                                    strong 0.21314
+                                td
+                                    strong 0.21314
+                                td BTC
+                                td 
+                                    +b.status(class="--orange") - 0.25%
+                                td
+                                    +b.status-checked
+                                td
+                                    +b.table-buttons
+                                        +b.A(href="#", class="btn --gray") Deposit
+                                        +b.A(href="#", class="btn --line-gray") Withdrawal
+                            
+                           
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+    
+    +b.SECTION.l-section
+        .container
+            .typography
+                p Developer or official representative of an asset has the right to temporarily close deposits/withdrawals/trade of his asset. Please, do your own research of coin developer reliability and market prospects of the assets you are planning to trade in. The Exchange is not liable to conduct research and provide guarantees for the quality of assets or the developer reliability. The Exchange provides historical data on executed orders, incoming and outgoing transactions for the latest 30 days only. If you need older data, please, make backup copies using a special tool in "Transactions" section located at the bottom of the page. Please, note, that storage period for canceled orders (without successful trades) is 1 to 7 days.
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Pending transactions
+                +b.filter
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="BTC")
+                        span BTC
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="USD")
+                        span USD
+                    +b.LABEL.radio-button
+                        input(type="radio", name="trading-filter", value="ALL", checked)
+                        span ALL
+            .datatable-module
+                table.table.js-datatable.responsive
+                    thead
+                        tr
+                            th 
+                                span Time
+                            th 
+                                span Type
+                            th 
+                                span Pair
+                            th 
+                                span Amount
+                            th 
+                                span Price
+                            th 
+                                span Value
+                            th 
+                                span Status
+                    tbody
+                        mixin tr2()
+                            tr
+                                td 01/11/2019
+                                td Type
+                                td USD/BTC
+                                td 121.32 USD
+                                td 121.32 USD
+                                td 121.32 USD
+                                td
+                                    +b.status(class="--green") Approved
+                            tr
+                                td 01/11/2019
+                                td Type
+                                td USD/BTC
+                                td 121.32 USD
+                                td 121.32 USD
+                                td 121.32 USD
+                                td
+                                    +b.status(class="--red") Delay
+                            
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+    
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

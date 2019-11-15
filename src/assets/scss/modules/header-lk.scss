@@ -1,0 +1,217 @@
+// header lk
+
+.nav-lk {
+    ul {
+        display: flex;
+        align-items: center;
+    }
+
+    li {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        font-size: rem(15px);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.9px;
+        font-family: $accentFont;
+    }
+}
+
+.podmenu-module {
+    background: #e0e3e8;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: #000;
+        font-weight: 700;
+        font-size: rem(14px);
+        padding: 20px 0;
+        display: block;
+        text-align: center;
+    }
+
+    li {
+        flex-grow: 1;
+
+        &.active {
+            background: #fff;
+        }
+    }
+}
+
+.top-bar {
+    background: $warning-color;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.b-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(15px);
+
+    &__title {
+        text-transform: uppercase;
+        font-size: rem(20px);
+        font-weight: 700;
+        font-family: $accentFont;
+        margin-right: 30px;
+    }
+}
+
+.header-lk {
+    padding: rem(45px) rem(80px);
+    background: #001a36;
+    background-size: 100%;
+    color: #fff;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a {
+        color: #fff;
+        font-family: $accentFont;
+    }
+
+    .menu-button {
+        display: none;
+        margin-left: 0;
+
+        @media (max-width: $desktop) {
+            display: flex;
+        }
+    }
+
+    &__logo {
+        width: rem(120px);
+        display: block;
+        margin-right: rem(30px);
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    .language {
+        margin: 0 rem(60px) 0 auto;
+
+        @media (max-width: 1300px) {
+            margin: 0 rem(30px) 0 auto;
+        }
+    }
+
+    &__buttons {
+        margin: -5px;
+        display: flex;
+
+        &>* {
+            margin: 5px;
+        }
+
+        .btn {
+            font-size: rem(12px);
+            padding: rem(11px) rem(15px);
+            font-weight: 700;
+            font-family: $mainFont;
+            letter-spacing: 1px;
+
+            &--line-warning {
+                color: #fff;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $desktop-xl) {
+            width: auto;
+        }
+    }
+
+    &__center {
+        position: relative;
+        margin: rem(8px) auto 0;
+    }
+
+    &__help-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 rem(-15px) rem(10px);
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        left: 0;
+
+        li {
+            margin: 0 rem(15px);
+
+            &.active {
+                a {
+                    color: $warning-color;
+                }
+            }
+        }
+
+        a {
+            font-size: rem(10px);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: rem(0.6px);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    @media (max-width: $desktop-xl) {
+        padding: rem(45px) 30px;
+    }
+
+    @media (max-width: $desktop) {
+        padding: 15px !important;
+
+        &__center {
+            display: none;
+        }
+    }
+
+    @media (max-width: $phone) {
+
+        &__buttons {
+            display: none;
+        }
+    }
+}

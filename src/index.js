@@ -1,5 +1,5 @@
 // JS
-import $ from 'jquery';
+import 'jquery.marquee';
 import SimpleScrollbar from 'simple-scrollbar';
 import './js/libs/jquery.viewportchecker.min';
 
@@ -17,9 +17,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     loader.classList.add('hide');
 });
 
-// animate
-$('section').viewportChecker({
-    classToAdd: 'active',
-    offset: 100,
-    repeat: false
+
+$(document).ready(function () {
+
+    // animate
+    $('section').viewportChecker({
+        classToAdd: 'active',
+        offset: 100,
+        repeat: false
+    });
+
+    // marquee
+    $('.ticker').marquee({
+        duration: 12000,
+        gap: 10,
+        delayBeforeStart: 0,
+        direction: 'left',
+        duplicated: true
+    });
+
 });

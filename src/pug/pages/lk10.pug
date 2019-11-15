@@ -1,0 +1,50 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk6';
+    - var pageClass = 'lk6';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Help
+            +b.UL.accordion
+                mixin item(title)
+                    +e.LI.item
+                        +e.A(class="trigger")(data-accordion='trigger') #{title}
+                        div(data-accordion='content-container')
+                            +e.content(data-accordion='content') Thanks to the modern, reliable and comfortable investment resource of the ScandTrade, specialists of our company, who conduct their activities from the main office in Copenhagen, can accept investments from any corner of our planet and effectively use them in the progressive crypto market. The company has been starting since 2017, when crypto and blockchain technologies become a promising destination for earnings. With many years of experience in trading in global markets, our specialists have organically embedded in a new direction and have developed their unique strategies for carrying out transactions with crypto currencies by trial and error.
+                +item('How do I get Bitcoins?')
+                +item('Can I buy bitcoins through Paypal?')
+                +item('Where can I find the Bitcoin user forum?')
+                +item('How are new Bitcoins created?')
+                +item('How many Bitcoins exist now?')
+                +item('How many parts is Bitcoin divided into?')
+                +item('What do I call the shares of Bitcoin?')
+                +item('How will the block reward decrease when it reaches very low values?')
+    
+    +b.SECTION.l-section
+        .container
+            +b.l-form
+                +e.H3.title Send message
+                +e.desc
+                    p f you need some help or a consultation, or you have a business proposal, please, read the following explanation. Follow this instruction to get a fast response from us. If you're a Customer of Livecoin and want to ask something or resolve an issue, contact us only via tickets. All Customers' requests are to be resolved ONLY via tickets, except issues concerning recovery of access to an account.
+                form
+                    +b.field(class="--row")
+                        label Title
+                        input(type="text")
+                    +b.field(class="--row")
+                        label Message
+                        textarea
+                    +btn('Send', '--warning')
+    
+    
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")
