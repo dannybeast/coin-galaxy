@@ -22,13 +22,12 @@ html(lang='en')
     block head
 
   body
-    .wrapper
-      #app
-        +b.loader
-          +e.inner
-          +e.inner
-        .content-wrapper
-          block content
-        include ../includes/modules/footer
+    .wrapper#app
+      +b.loader
+        +e.inner
+        +e.inner
+      .content-wrapper
+        block content
+      include ../includes/modules/footer
 
     block script

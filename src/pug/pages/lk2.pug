@@ -1,0 +1,98 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk2';
+    - var pageClass = 'lk2';
+    - var pageParent = 'lk2';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+    
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Buy/sell
+            .row
+                .col-md-6
+
+                .col-md-6  
+                
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title OPERATIONS LIST
+                +b.filter
+                    +b.LABEL.radio-button
+                        input(type="radio", name="pending-filter", value="BTC")
+                        span BTC
+                    +b.LABEL.radio-button
+                        input(type="radio", name="pending-filter", value="USD")
+                        span USD
+                    +b.LABEL.radio-button
+                        input(type="radio", name="pending-filter", value="ALL", checked)
+                        span ALL
+            +b.datatable-module(class="--lk")
+                table.table.js-datatable.responsive(data-page-size="8")
+                    thead
+                        tr
+                            th 
+                                span Time
+                            th 
+                                span Type
+                            th 
+                                span Pair
+                            th 
+                                span Amount
+                            th 
+                                span Price
+                            th 
+                                span Value
+                            th 
+                                span Status
+                    tbody
+                        mixin tr2()
+                            tr
+                                td 01/11/2019
+                                td Type
+                                td USD/BTC
+                                td 121.32 USD
+                                td 121.32 USD
+                                td 121.32 USD
+                                td
+                                    +b.status(class="--green") Approved
+                            tr
+                                td 01/11/2019
+                                td Type
+                                td USD/BTC
+                                td 121.32 USD
+                                td 121.32 USD
+                                td 121.32 USD
+                                td
+                                    +b.status(class="--red") Delay
+                            
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+                        +tr2()
+
+    +b.SECTION.l-section
+        .container
+            .row
+                .col-md-6
+
+                .col-md-6     
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

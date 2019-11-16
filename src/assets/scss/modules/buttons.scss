@@ -17,7 +17,6 @@
     font-size: rem(24px);
     text-transform: uppercase;
     font-weight: 500;
-
     border-radius: rem(50px);
     transition: all .1s ease;
     $parent: &;
@@ -66,6 +65,30 @@
         }
     }
 
+    &--line-gray {
+        background: transparent;
+        border: 2px solid #e0e3e8;
+
+        &:hover {
+            background: #e0e3e8;
+        }
+    }
+
+    &--i-user {
+        align-items: center;
+
+        &:before {
+            content: '';
+            width: 15px;
+            height: 19px;
+            display: block;
+            background: svg-load("../icons/man-user.svg", fill=#fff);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+    }
+
     &--i-next {
         align-items: center;
 
@@ -83,6 +106,21 @@
 
     &--full {
         width: 100%;
+    }
+
+    &--small {
+        border-radius: rem(12px);
+        font-size: rem(18px);
+        padding: rem(9px) rem(35px);
+        font-weight: 700;
+    }
+
+    &--color-dark {
+        color: #000;
+
+        &:hover {
+            color: #000;
+        }
     }
 
     &.disabled {

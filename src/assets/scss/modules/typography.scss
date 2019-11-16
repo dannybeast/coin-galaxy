@@ -211,8 +211,12 @@ sup {
 .typography {
   font-size: $base-font-size;
   line-height: $base-line-height;
-
   letter-spacing: normal;
+
+  &--small {
+    font-size: 13px;
+    font-weight: 400;
+  }
 
   p {
     &:first-child {

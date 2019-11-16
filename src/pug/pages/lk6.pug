@@ -4,25 +4,26 @@ block variables
     - var title = 'COINGALAXY';
     - var description = 'Coingalaxy - Lk6';
     - var pageClass = 'lk6';
+    - var pageParent = 'lk6';
 block styles
     link(rel="stylesheet" href="assets/css/lk.css")
 block content
     include ../includes/modules/header-lk
     +header-lk()
-
-    +b.SECTION
+    include ../includes/modules/lk-6-podmenu
+    +b.SECTION.l-section
         .container
             +b.b-top
                 +e.H1.title My Orders
-                +b.filters
+                +b.filter
                     +b.SELECT
                         option All types
                     +b.SELECT
                         option Last 30 days
                     +b.SELECT
                         option All currencies
-            .datatable-module
-                table.table.js-datatable.responsive
+            +b.datatable-module(class="--lk")
+                table.table.js-datatable.responsive(data-page-size="19")
                     thead
                         tr
                             th 
@@ -59,7 +60,16 @@ block content
                                 td 11.32 USD
                                 td 
                                     +b.status(class="--green") Approved
-                           
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
+                        +tr()
                         +tr()
                         +tr()
                         +tr()

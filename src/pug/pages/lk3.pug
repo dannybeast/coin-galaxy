@@ -2,45 +2,101 @@ extends ../layout/main
 
 block variables
     - var title = 'COINGALAXY';
-    - var description = 'Coingalaxy - Lk6';
-    - var pageClass = 'lk6';
+    - var description = 'Coingalaxy - Lk3';
+    - var pageClass = 'lk3';
+    - var pageParent = 'lk6';
 block styles
     link(rel="stylesheet" href="assets/css/lk.css")
 block content
     include ../includes/modules/header-lk
     +header-lk()
-    
+    include ../includes/modules/lk-6-podmenu
+
     +b.SECTION.l-section
         .container
             +b.b-top
                 +e.H1.title Fiat Balance
+            .row
+                .col-md-6
+                    +b.fiat-balance.h-full
+                        +e.item
+                            +e.icon
+                                img(src="assets/images/currency/fiat-dollar.png", alt="")
+                            +e.P.name USD
+                            +e.UL.list
+                                +e.LI
+                                    +e.P.subtitle Total
+                                    +e.P.count.color-warning 121
+                                +e.LI
+                                    +e.P.subtitle Available
+                                    +e.P.count 121
+                                +e.LI
+                                    +e.P.subtitle In orders
+                                    +e.P.count 121
+                            +b.small-buttons
+                                +b.A(href="#", class="btn --gray") Deposit
+                                +b.A(href="#", class="btn --line-gray") Withdrawal
+                        +e.item
+                            +e.icon
+                                img(src="assets/images/currency/fiat-rub.png", alt="")
+                            +e.P.name RUB
+                            +e.UL.list
+                                +e.LI
+                                    +e.P.subtitle Total
+                                    +e.P.count.color-warning 4 341
+                                +e.LI
+                                    +e.P.subtitle Available
+                                    +e.P.count 4 341
+                                +e.LI
+                                    +e.P.subtitle In orders
+                                    +e.P.count 4 341
+                            +b.small-buttons
+                                +b.A(href="#", class="btn --gray") Deposit
+                                +b.A(href="#", class="btn --line-gray") Withdrawal
+                        +e.item
+                            +e.icon
+                                img(src="assets/images/currency/fiat-euro.png", alt="")
+                            +e.P.name Euro
+                            +e.UL.list
+                                +e.LI
+                                    +e.P.subtitle Total
+                                    +e.P.count.color-warning 311
+                                +e.LI
+                                    +e.P.subtitle Available
+                                    +e.P.count 311
+                                +e.LI
+                                    +e.P.subtitle In orders
+                                    +e.P.count 311
+                            +b.small-buttons
+                                +b.A(href="#", class="btn --gray") Deposit
+                                +b.A(href="#", class="btn --line-gray") Withdrawal
+                .col-md-6
+                    +b.l-form.h-full
+                        +e.H3.title Redeem a voucher
+                        +e.desc
+                            p Livecoin voucher is identified by a unique code, it has pre-paid value, and it can be redeemed only once. You can buy Livecoin vouchers from our partners’ digital currencies exchange shops.
+                        form
+                            +b.field
+                                label.color-warning Voucher code:
+                                input(type="text")
+                            +btn('Redem', '--warning --color-dark --small')
             
-
-            +b.l-form
-                +e.H3.title Redeem a voucher
-                +e.desc
-                    p Livecoin voucher is identified by a unique code, it has pre-paid value, and it can be redeemed only once. You can buy Livecoin vouchers from our partners’ digital currencies exchange shops.
-                form
-                    +b.field(class="--row")
-                        label Voucher code:
-                        input(type="text")
-                    +btn('Redem', '--warning')
     +b.SECTION.l-section
         .container
             +b.b-top
                 +e.H1.title Cryptocurrency Balance
                 +b.filter
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="BTC")
+                        input(type="radio", name="crypto-filter", value="BTC")
                         span BTC
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="USD")
+                        input(type="radio", name="crypto-filter", value="USD")
                         span USD
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="ALL", checked)
+                        input(type="radio", name="crypto-filter", value="ALL", checked)
                         span ALL
-            .datatable-module
-                table.table.js-datatable.responsive
+            +b.datatable-module(class="--lk")
+                table.table.js-datatable.responsive(data-page-size="8")
                     thead
                         tr
                             th 
@@ -55,14 +111,14 @@ block content
                                 span Symbol
                             th 
                                 span Price change 24h
-                            th 
+                            th
                                 span Status
                             th
                     tbody
                         mixin tr()
                             tr
                                 td 
-                                   +b.pair
+                                   +b.pair(class="--small")
                                         +e.icon
                                             img(src="assets/images/currency/iex.png", alt="")
                                         strong Bitcoin
@@ -78,12 +134,12 @@ block content
                                 td
                                     +b.status-checked(class="--true")
                                 td
-                                    +b.table-buttons
+                                    +b.small-buttons
                                         +b.A(href="#", class="btn --gray") Deposit
                                         +b.A(href="#", class="btn --line-gray") Withdrawal
-                        tr
+                            tr
                                 td 
-                                   +b.pair
+                                   +b.pair(class="--small")
                                         +e.icon
                                             img(src="assets/images/currency/btc1.png", alt="")
                                         strong Bitcoin
@@ -99,7 +155,7 @@ block content
                                 td
                                     +b.status-checked
                                 td
-                                    +b.table-buttons
+                                    +b.small-buttons
                                         +b.A(href="#", class="btn --gray") Deposit
                                         +b.A(href="#", class="btn --line-gray") Withdrawal
                             
@@ -117,24 +173,25 @@ block content
     
     +b.SECTION.l-section
         .container
-            .typography
+            +b.typography(class="--small")
                 p Developer or official representative of an asset has the right to temporarily close deposits/withdrawals/trade of his asset. Please, do your own research of coin developer reliability and market prospects of the assets you are planning to trade in. The Exchange is not liable to conduct research and provide guarantees for the quality of assets or the developer reliability. The Exchange provides historical data on executed orders, incoming and outgoing transactions for the latest 30 days only. If you need older data, please, make backup copies using a special tool in "Transactions" section located at the bottom of the page. Please, note, that storage period for canceled orders (without successful trades) is 1 to 7 days.
+    
     +b.SECTION.l-section
         .container
             +b.b-top
                 +e.H1.title Pending transactions
                 +b.filter
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="BTC")
+                        input(type="radio", name="pending-filter", value="BTC")
                         span BTC
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="USD")
+                        input(type="radio", name="pending-filter", value="USD")
                         span USD
                     +b.LABEL.radio-button
-                        input(type="radio", name="trading-filter", value="ALL", checked)
+                        input(type="radio", name="pending-filter", value="ALL", checked)
                         span ALL
-            .datatable-module
-                table.table.js-datatable.responsive
+            +b.datatable-module(class="--lk")
+                table.table.js-datatable.responsive(data-page-size="8")
                     thead
                         tr
                             th 

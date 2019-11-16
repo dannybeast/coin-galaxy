@@ -1,0 +1,42 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk8';
+    - var pageClass = 'lk8';
+    - var pageParent = 'lk6';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+    include ../includes/modules/lk-6-podmenu
+    
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Exchange offices offering to sell or buy LiveCoin vouchers
+
+            +b.UL.exchange
+                mixin li()
+                    +e.LI
+                        +e.col
+                            img(src="assets/images/exchange1.png", alt="")
+                        +e.col
+                            +e.A(href="https://xchange.ltd/" target="_blank", class="link") Xchange.cash
+                        +e.col.typography
+                            p Russian Standard, VTB 24, Alfa Bank, Sberbank, QIWI, Avangard Bank, Yandex.Money, Gazprombank, Tinkoff, Raiffeisenbank, Visa/MasterCard, eCoin Codes 
+                    +e.LI
+                        +e.col
+                            img(src="assets/images/exchange2.png", alt="")
+                        +e.col
+                            +e.A(href="https://24xbtc.com/" target="_blank", class="link") 24XBTC.COM
+                        +e.col.typography
+                            p Exchange, deposit, withdrawal, buy, sell cash, electronic currency, cryptocurrency, sending and receiving money transfers. Available in: Ukraine, Russia, Belarus, USA, China. 
+                +li()
+                +li()
+                +li()
+
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

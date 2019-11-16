@@ -1,0 +1,67 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk9';
+    - var pageClass = 'lk9';
+    - var pageParent = 'lk5';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+    
+    +b.SECTION.l-section(class="--bordered")
+        .container
+            +b.b-top
+                +e.H1.title Settings
+            form()
+                .row
+                    .col-md-6
+                        +b.field(class="--mb-large")
+                            label Enter name
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label E-mail
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label Password
+                            input(type="password")
+                    .col-md-6
+                        +b.field(class="--mb-large")
+                            label Login
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label Phone num.
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label Confirm password
+                            input(type="password")
+                    .col-md-12
+                        +b.LABEL.checkbox-switch
+                            input(type="checkbox")
+                            +e.SPAN.content 
+                              span 2FA Authentification
+                    .col-md-12
+                        +btn('Save settings', '--warning --color-dark --small')
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H3.title wallets
+            form()
+                .row
+                    .col-md-6
+                        +b.field(class="--mb-large")
+                            label Wallet number
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label Wallet number
+                            input(type="text")
+                        +b.field(class="--mb-large")
+                            label Wallet number
+                            input(type="text")
+                    .col-md-12
+                        +btn('Save wallet info', '--warning --color-dark --small')
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

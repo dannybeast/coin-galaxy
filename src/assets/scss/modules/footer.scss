@@ -2,6 +2,7 @@
 .footer {
     background: $neutral-secondary;
     font-size: rem(13px);
+    margin-top: auto;
 
     a {
         @extend .link;
@@ -113,7 +114,8 @@
 
         a {
             text-decoration: none;
-            color: #000;
+            color: #000 !important;
+            font-weight: 400;
 
             &:hover {
                 text-decoration: underline;

@@ -4,7 +4,7 @@ import './js/libs/jquery.viewportchecker.min';
 import './js/modules/language';
 import './js/modules/accordion';
 import './js/modules/datatables';
-
+import './js/modules/copy';
 // SCSS
 import './assets/scss/lk.scss'
 

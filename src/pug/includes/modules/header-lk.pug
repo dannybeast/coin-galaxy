@@ -21,7 +21,8 @@ mixin header-right()
                 img(src="https://picsum.photos/id/232/25/17", alt="EN")
 
       +e.buttons
-        +btn-link('signup.html', 'Username', '--line-warning')
+        a.btn.btn--line-warning.btn--i-user(href='signup.html') 
+            span Username
         +btn-link('login.html', 'Logout', '--line-white')
 
 mixin header-lk()
@@ -34,8 +35,7 @@ mixin header-lk()
                 +b.A(href="#").notification
                     +e.SPAN.count 10
                     +e.SPAN.name You have 10 notifications
-                +b.A(href="#").icon-link
-                    img(src="assets/images/cash.svg", alt="")
+                +b.A(href="#").icon-link(class="--deposit")
                     span Deposit
     +b.HEADER.header-lk
         .container
@@ -44,32 +44,17 @@ mixin header-lk()
             +e.center
                 +b.NAV.nav-lk
                     ul
-                        li(class=(pageClass === "lk1" ? " active" : undefined))
-                            a(href="#") Account
-                        li(class=(pageClass === "lk2" ? " active" : undefined))
-                            a(href="#") BUY / SELL
-                        li(class=(pageClass === "lk6" ? " active" : undefined))
-                            a(href="#") BALANCE
-                        li(class=(pageClass === "lk4" ? " active" : undefined))
+                        li(class=(pageParent === "lk1" ? " active" : undefined))
+                            a(href="lk1.html") Account
+                        li(class=(pageParent === "lk2" ? " active" : undefined))
+                            a(href="lk2.html") BUY / SELL
+                        li(class=(pageParent === "lk6" ? " active" : undefined))
+                            a(href="lk3.html") BALANCE
+                        li(class=(pageParent === "lk4" ? " active" : undefined))
                             a(href="#") THE GAME
-                        li(class=(pageClass === "lk5" ? " active" : undefined))
-                            a(href="#") Settings
-                        li(class=(pageClass === "lk7" ? " active" : undefined))
-                            a(href="#") HELP
+                        li(class=(pageParent === "lk5" ? " active" : undefined))
+                            a(href="lk9.html") Settings
+                        li(class=(pageParent === "lk10" ? " active" : undefined))
+                            a(href="lk10.html") HELP
                 
             +header-right()
-    +b.podmenu-module
-        .container
-            ul
-                li
-                    a(href="#") Balance
-                li.active
-                    a(href="#") Referral Program
-                li
-                    a(href="#") History
-                li
-                    a(href="#") My Orders
-                li
-                    a(href="#") Tariff and Limits
-                li
-                    a(href="#") Exchange

@@ -2,14 +2,15 @@ extends ../layout/main
 
 block variables
     - var title = 'COINGALAXY';
-    - var description = 'Coingalaxy - Lk6';
-    - var pageClass = 'lk6';
+    - var description = 'Coingalaxy - Lk4';
+    - var pageClass = 'lk4';
+    - var pageParent = 'lk6';
 block styles
     link(rel="stylesheet" href="assets/css/lk.css")
 block content
     include ../includes/modules/header-lk
     +header-lk()
-
+    include ../includes/modules/lk-6-podmenu
     +b.SECTION.l-section
         .container
             +b.b-top
@@ -18,11 +19,11 @@ block content
                 +e.H3.title Your referral link
                 +e.desc
                     p Do NOT register another account using your own referral link. This will lead to a loss of both accounts with all the funds, according to the User agreement. If you need a second account, contact support via tickets and explain, why do you need one. Usually we do allow multiple accounts in case you have reasonable grounds.
-                form
-                    +b.field(class="--row")
-                        label Phone
-                        input(type="text")
-                    +btn('COPY', '--warning')
+                .js-copy
+                    +b.field
+                        label.color-warning Your referral link
+                        input(type="text" value="http://localhost:8080/lk4.html" class="js-copy-input")
+                    +btn('COPY', '--warning --color-dark --small js-copy-button')
     
     +b.SECTION.l-section
         .container
@@ -38,8 +39,8 @@ block content
                     +b.LABEL.radio-button
                         input(type="radio", name="trading-filter", value="ALL", checked)
                         span ALL
-            .datatable-module
-                table.table.js-datatable.responsive
+            +b.datatable-module(class="--lk")
+                table.table.js-datatable.responsive(data-page-size="8")
                     thead
                         tr
                             th 

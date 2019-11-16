@@ -1,7 +1,15 @@
 .field {
     text-align: left;
     $parent: &;
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
+
+    &--mb-large {
+        margin-bottom: rem(30px);
+
+        @media (max-width: $phone) {
+            margin-bottom: rem(20px);
+        }
+    }
 
     label {
         font-size: 12px;
@@ -9,7 +17,7 @@
         font-weight: bold;
         letter-spacing: 1.68px;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     input,
@@ -21,11 +29,12 @@
         font-size: 16px;
         height: 40px;
         font-family: $mainFont;
-        border-radius: 6px;
+        border-radius: rem(12px);
         padding-left: 15px;
+        transition: all .2s ease;
 
         &:hover {
-            border-color: rgb(214, 218, 234);
+            border-color: rgb(184, 188, 206);
         }
     }
 
@@ -179,6 +188,64 @@
             .checkbox__icon,
             .radio__icon {
                 border-color: #ccc;
+            }
+        }
+    }
+}
+
+.checkbox-switch {
+    display: block;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    &__content {
+
+        span {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:before {
+                content: '';
+                width: 48px;
+                height: 24px;
+                display: inline-block;
+                margin-right: 10px;
+                border-radius: 12px;
+                flex-shrink: 0;
+                border: 2px solid #042a41;
+                background-color: #dee6eb;
+                transition: all .2s ease;
+            }
+
+            &:after {
+                content: '';
+                width: 18px;
+                height: 18px;
+                background-color: #042a41;
+                opacity: 0.4;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                left: 4px;
+                top: 5px;
+                transition: all .2s ease;
+            }
+        }
+    }
+
+    input {
+        display: none;
+
+        &:checked+span {
+            span {
+                &:before {
+                    background-color: #dee6eb;
+                }
+
+                &:after {
+                    transform: translateX(22px);
+                }
             }
         }
     }

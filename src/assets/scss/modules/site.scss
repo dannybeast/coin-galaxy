@@ -23,6 +23,26 @@
   }
 }
 
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: $desktop;
+
+  @media (max-width: $desktop) {
+    max-width: $tablet;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 100%
+  }
+
+  @media (max-width: $phone) {
+    padding: 0 15px;
+  }
+}
 
 .s-title {
   font-size: rem(30px);

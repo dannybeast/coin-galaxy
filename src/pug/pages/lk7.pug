@@ -1,0 +1,135 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk7';
+    - var pageClass = 'lk7';
+    - var pageParent = 'lk6';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+    include ../includes/modules/lk-6-podmenu
+
+    +b.SECTION.l-section
+        .container
+            +b.b-top
+                +e.H1.title Tariff and Limits 
+
+            .row
+                .col-md-6
+                    +b.l-block
+                        +e.P.title Deposit & withdrawal fees
+                        table.table.js-datatable.responsive(sort="false")
+                            thead
+                                tr
+                                    th 
+                                        span Type
+                                    th 
+                                        span Deposit fee
+                                    th 
+                                        span Withdrawal fee
+                            tbody
+                                mixin tr()
+                                    tr
+                                        td 
+                                            +b.pair
+                                                +e.icon
+                                                    img(src="assets/images/currency/payeer.png", alt="")
+                                                strong Payeer.com
+                                        td USD, RUR: 0,5% EUR: 1%
+                                        td EUR: 3.5%  RUR:2.5%*
+                                    tr
+                                        td 
+                                            +b.pair
+                                                +e.icon
+                                                    img(src="assets/images/currency/pm.png", alt="")
+                                                strong Perfect Money
+                                        td N/A
+                                        td EUR: 3.5%
+                                    
+                                    tr
+                                        td 
+                                            +b.pair
+                                                +e.icon
+                                                    img(src="assets/images/currency/capitalist.png", alt="")
+                                                strong Capitalist
+                                        td 0%
+                                        td 2%
+                                    
+                                    tr
+                                        td 
+                                            +b.pair
+                                                +e.icon
+                                                    img(src="assets/images/currency/btc1.png", alt="")
+                                                strong AdvCash.com
+                                        td 0.5%
+                                        td USD, RUR: 3.9%  
+                                    
+                                    tr
+                                        td 
+                                            +b.pair
+                                                +e.icon
+                                                    img(src="assets/images/currency/qiwi.png", alt="")
+                                                strong Qiwi
+                                        td RUR: 7%
+                                        td RUR: 8.5%
+                                +tr()
+                                +tr()
+                .col-md-6
+                    +b.l-block(class="--trading")
+                        +e.P.title Trading Volume for 30 days (in USD)
+                        table.table.js-datatable.responsive(sort="false")
+                            thead
+                                tr
+                                    th 
+                                        span Trading Volume for 30 days (in USD)
+                                    th 
+                                        span Fee
+                            tbody
+                                mixin tr2()
+                                    tr
+                                        td
+                                            p
+                                                strong 100,001 -    200,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 200,001 -    400,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 400,001 -    600,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 600,001 -    800,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 800,001 -    1,000,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 1,000,001 - 1,500,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 1,500,001  - 2,000,000$
+                                        td 0.1%
+                                    tr
+                                        td
+                                            p
+                                                strong 2,000,001$
+                                        td 0.1%
+                                +tr2()
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")
