@@ -16,12 +16,15 @@ block content
             +b.b-top
                 +e.H1.title My Orders
                 +b.filter
-                    +b.SELECT
-                        option All types
-                    +b.SELECT
-                        option Last 30 days
-                    +b.SELECT
-                        option All currencies
+                    .select-wrapper
+                        +b.SELECT
+                            option All types
+                    .select-wrapper
+                        +b.SELECT
+                            option Last 30 days
+                    .select-wrapper
+                        +b.SELECT
+                            option All currencies
             +b.datatable-module(class="--lk")
                 table.table.js-datatable.responsive(data-page-size="19")
                     thead

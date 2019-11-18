@@ -10,12 +10,396 @@ block styles
 block content
     include ../includes/modules/header-lk
     +header-lk()
-    
+    include ../includes/modules/trading-info
     +b.SECTION.l-section
         .container
             +b.b-top
                 +e.H1.title Account summary
+            .row
+                .col-md-4
+                    +b.b-top
+                        +b.filter
+                            +b.LABEL.radio-button(class="--star")
+                                input(type="radio", name="summary-filter", value="STAR")
+                                span
+                            +b.LABEL.radio-button
+                                input(type="radio", name="summary-filter", value="BTC" checked)
+                                span BTC
+                            +b.LABEL.radio-button
+                                input(type="radio", name="summary-filter", value="ETH")
+                                span ETH
+                            +b.LABEL.radio-button
+                                input(type="radio", name="summary-filter", value="LTC")
+                                span LTC
+                            +b.LABEL.radio-button
+                                input(type="radio", name="summary-filter", value="USD")
+                                span USD
+                            +b.LABEL.radio-button
+                                input(type="radio", name="summary-filter", value="RUR")
+                                span RUR
+                            +e.LABEL.search
+                                input(type="text", placeholder="Search")#summary
+                    +b.datatable-module(class="--small --summary")
+                        table.table.js-datatable-summary.responsive
+                            thead
+                                tr
+                                    th 
+                                        span Pair
+                                    th 
+                                        span Volume (24h)
+                                    th 
+                                        span Last price
+                                    th 
+                                        span Change
+                            tbody
+                                mixin tr()
+                                    tr
+                                        td 
+                                            +b.pair(class="--small")
+                                                +e.icon
+                                                    img(src="assets/images/currency/iex.png", alt="")
+                                                strong IEX/BTC
+                                        td 0.02 BTC
+                                        td 8 495.90899 USD
+                                    
+                                        td 
+                                            +b.status(class="--orange") -1.25%
+                                    tr
+                                        td 
+                                            +b.pair(class="--small")
+                                                +e.icon
+                                                    img(src="assets/images/currency/btc1.png", alt="")
+                                                strong BTC/USD
+                                        td 0.02 BTC
+                                        td 8 495.90899 USD
+                                    
+                                        td 
+                                            +b.status(class="--green") +4.25%  
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                .col-md-8
+                    +b.graph
+                        img(src="assets/images/graph.png", alt="")
+    +b.SECTION.l-section
+        .container
+            .row
+                .col-md-4
+                    +b.b-top
+                        +e.H1.title BUY BTC FOR USD
+                    +b.l-block
+                        +b.FORM.buy-sell
+                            +b.field
+                                label You get
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend 
+                                        span BTC
+                            +b.field
+                                label Price per BTC
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend.select-wrapper
+                                        select
+                                            option USD
+                            +b.field
+                                label You pay (inc. 0.18% fee)
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend
+                                        span USD
+                            +btn('Buy BTC', '--warning --color-dark --small')
+                            +e.bottom
+                                p
+                                    strong You have: 0 USD
+                                p.color-light Switch to market order
 
+                .col-md-4
+                    +b.b-top
+                        +e.H1.title SELL BTC FOR USD
+                        +e.links
+                            a(href="#") Deposit
+                            a(href="#") Withdraw
+                    +b.l-block
+                        +b.FORM.buy-sell
+                            +b.field
+                                label You pay
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend 
+                                        span BTC
+                            +b.field
+                                label Price per BTC
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend.select-wrapper
+                                        select
+                                            option USD
+                            +b.field
+                                label You pay (inc. 0.18% fee)
+                                +e.prepend-group
+                                    input(type="text")
+                                    +b.prepend 
+                                        span USD
+                            +btn('Buy BTC', '--dark --small')
+                            +e.bottom
+                                p
+                                    strong You have: 0 USD
+                                p.color-light Switch to market order
+                .col-md-4
+                    +b.b-top
+                        +e.H1.title MY ORDERS
+                        +b.filter
+                            +b.LABEL.radio-button
+                                input(type="radio", name="orders-filter", value="BTC")
+                                span BTC
+                            +b.LABEL.radio-button
+                                input(type="radio", name="orders-filter", value="USD")
+                                span USD
+                            +b.LABEL.radio-button
+                                input(type="radio", name="orders-filter", value="ALL", checked)
+                                span ALL
+                    +b.l-block(class="--dark --orders")
+                        table.table.js-datatable.responsive(data-page-size="10" sort="false")
+                            thead
+                                tr
+                                    th 
+                                        span Time
+                                    th 
+                                        span Type
+                                    th 
+                                        span Pair
+                                    th 
+                                        span Amount
+                                    th 
+                                        span Price
+                                    th 
+                                        span Value
+                                    th 
+                                        span Status
+                            tbody
+                                mixin tr2()
+                                    tr
+                                        td 01/11/2019
+                                        td Type
+                                        td USD/BTC
+                                        td 121.32 USD
+                                        td 121.32 USD
+                                        td 121.32 USD
+                                        td
+                                            +b.status(class="--green") Approved
+                                    tr
+                                        td 01/11/2019
+                                        td Type
+                                        td USD/BTC
+                                        td 121.32 USD
+                                        td 121.32 USD
+                                        td 121.32 USD
+                                        td
+                                            +b.status(class="--red") Delay
+
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+                                +tr2()
+    
+    +b.SECTION.l-section.buy-sell-section
+        +b.container(class="--p-large")
+            .row
+                .col-md-6.column
+                    +b.b-top
+                        +e.H1.title SELLING BTC
+
+                    +b.s-table
+                        +e.tr
+                            +e.th Price
+                            +e.th Amount
+                            +e.th Value
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                .col-md-6.column
+                    +b.b-top
+                        +e.H1.title BUYING BTC
+                    +b.s-table
+                        +e.tr
+                            +e.th Price
+                            +e.th Amount
+                            +e.th Value
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr(data-percent="80%")
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+    +b.SECTION.l-section
+        +b.container(class="--p-large")
+            .row
+                .col-md-6
+                    +b.b-top
+                        +e.H1.title MARKET TRADE HISTORY
+                    +b.l-block(class="--not-border")
+                        table.table.js-datatable.responsive(sort="false")
+                            thead
+                                tr
+                                    th 
+                                        span Time
+                                    th 
+                                        span Type
+                                    th 
+                                        span Amount
+                                    th 
+                                        span Price
+                                    th 
+                                        span Value
+                            tbody
+                                mixin tr()
+                                    tr
+                                        td 
+                                            +b.trade-status(class="--up") 
+                                                span 30.10.2019 15:07
+                                        td SELL
+                                        td 0.0088148 BTC
+                                        td 9 458.89998 USD
+                                        td 83.37831 USD
+                                    tr    
+                                        td 
+                                            +b.trade-status(class="--down") 
+                                                span 30.10.2019 15:07
+                                        td SELL
+                                        td 0.0088148 BTC
+                                        td 9 458.89998 USD
+                                        td 83.37831 USD
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                .col-md-6
+                    +b.b-top
+                        +e.H1.title MY TRADE HISTORY
+                    +b.l-block(class="--not-border")
+                        table.table.js-datatable.responsive(sort="false")
+                            thead
+                                tr
+                                    th 
+                                        span Time
+                                    th 
+                                        span Type
+                                    th 
+                                        span Amount
+                                    th 
+                                        span Price
+                                    th 
+                                        span Value
+                            tbody
+                                mixin tr()
+                                    tr
+                                        td 
+                                            +b.trade-status(class="--up") 
+                                                span 30.10.2019 15:07
+                                        td SELL
+                                        td 0.0088148 BTC
+                                        td 9 458.89998 USD
+                                        td 83.37831 USD
+                                    tr    
+                                        td 
+                                            +b.trade-status(class="--down") 
+                                                span 30.10.2019 15:07
+                                        td SELL
+                                        td 0.0088148 BTC
+                                        td 9 458.89998 USD
+                                        td 83.37831 USD
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
+                                +tr()
 block script
     script(src="assets/js/vendors.js")
     script(src="assets/js/lk.js")

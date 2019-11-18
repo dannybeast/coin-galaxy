@@ -1,6 +1,6 @@
 // JS
 import './js/libs/jquery.viewportchecker.min';
-
+import SimpleScrollbar from 'simple-scrollbar';
 import './js/modules/language';
 import './js/modules/accordion';
 import './js/modules/datatables';
@@ -20,7 +20,7 @@ $(document).ready(function () {
     $('section').viewportChecker({
         classToAdd: 'active',
         offset: 100,
-        repeat: false
+        repeat: true
     });
 
 });

@@ -60,6 +60,15 @@ section,
 .section {
     position: relative;
     padding: rem(90px) 0;
+    opacity: 0;
+    transition: transform 1s ease,
+        opacity 1s ease;
+    transform: translateY(-10px);
+
+    &.active {
+        opacity: 1;
+        transform: none;
+    }
 
     @media (max-width: $phone) {
         padding: rem(60px) 0;
@@ -200,6 +209,36 @@ section,
         }
     }
 
+    &--star {
+        span {
+            padding: rem(5px) rem(5px) !important;
+
+            &:before {
+                content: '';
+                display: block;
+                background: svg-load("../icons/star.svg", fill=#66717d);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        input {
+            &:checked+span {
+                background: $warning-color !important;
+
+                &:before {
+                    background: svg-load("../icons/star.svg", fill=#fff);
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+
     input {
         display: none;
 
@@ -216,6 +255,33 @@ section,
     flex-wrap: wrap;
     justify-content: center;
     margin: -5px;
+
+    &__search {
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: svg-load("../icons/search.svg", fill=#a6b7c8);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        input {
+            height: 27px;
+            font-size: 12px;
+            padding-left: 15px;
+            border-radius: 13px;
+            padding-right: 30px;
+            width: 125px;
+            border: 1px solid #a7b8c9;
+        }
+    }
 
     select {
         background: #eff1f3;
@@ -259,6 +325,26 @@ section,
             width: 20px;
             height: 20px;
         }
+    }
+}
+
+.dataTables_scroll {
+    width: 100%;
+}
+
+.dataTables_scrollBody {
+    height: 500px;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border: none;
+}
+
+.dataTables_scrollBody {
+    //overflow: hidden !important;
+
+    thead {
+        display: none;
     }
 }
 
@@ -352,7 +438,7 @@ section,
     }
 
     &-light {
-        color: #e0e3e8;
+        color: #aeb6bf;
     }
 }
 

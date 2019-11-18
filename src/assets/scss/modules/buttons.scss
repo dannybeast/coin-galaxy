@@ -35,6 +35,16 @@
         }
     }
 
+    &--dark {
+        background: #001326;
+        color: #fff;
+
+        &:hover {
+            background: lighten(#001326, 5%);
+            color: #fff;
+        }
+    }
+
     &--warning {
         background: $warning-color;
         color: #fff;

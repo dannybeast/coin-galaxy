@@ -268,10 +268,62 @@
 
 .intro-steps {
   $parent: &;
+  height: 60px;
+  position: relative;
+
+  @media (max-width: $phone) {
+    height: auto;
+  }
+
+  &__next {
+    transform: translateY(-50%) rotate(180deg);
+    left: 100%;
+
+    @media (max-width: $phone) {
+      margin-right: 0;
+      left: inherit;
+      right: 0;
+    }
+  }
+
+  &__prev {
+    transform: translateY(-50%) rotate(0);
+    right: 100%;
+    margin-right: 30px;
+
+    @media (max-width: $phone) {
+      margin-right: 0;
+      right: inherit;
+      left: 0;
+    }
+  }
+
+  &__next,
+  &__prev {
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: svg-load("../icons/arrow.svg", fill=#fff);
+    background-position: center;
+    background-size: 15px;
+    transform-origin: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 
   ul {
     display: flex;
     align-items: center;
+
+    @media (max-width: $phone) {
+      justify-content: center;
+    }
   }
 
   &__name {
@@ -286,6 +338,7 @@
     margin-top: rem(20px);
     letter-spacing: 0.44px;
     white-space: nowrap;
+    transition: all .2s ease;
 
     @media (max-width: $phone) {
       font-size: rem(12px);
@@ -314,6 +367,8 @@
     position: relative;
     font-size: rem(13px);
     text-align: center;
+    transition: all .3s ease;
+
 
     &:after {
       content: '';
@@ -326,6 +381,7 @@
 
       @media (max-width: $phone) {
         width: rem(30px);
+        display: none;
       }
     }
 
@@ -372,8 +428,8 @@
     }
 
     @media (max-width: $phone) {
-      margin-right: rem(30px);
-      padding: rem(16px) rem(20px);
+      margin: 0 auto !important;
+      padding: rem(16px) rem(21px);
       display: none;
     }
   }
@@ -401,6 +457,10 @@
     }
   }
 
+  &__titles {
+    position: relative;
+  }
+
   &__title {
     font-size: 37px;
     font-family: $accentFont;
@@ -410,6 +470,28 @@
 
     span {
       font-weight: 100;
+      display: block;
+    }
+
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: all .4s ease;
+    visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    &:nth-child(1) {
+      position: relative;
+      transform: none;
+      left: 0;
+      top: 0;
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
     }
 
     @media (max-width: $desktop) {
@@ -421,11 +503,36 @@
     @media (max-width: $phone) {
       position: relative;
       z-index: 2;
+      width: 100%;
     }
   }
 
   &__s-image {
     margin-left: rem(60px);
+    position: relative;
+
+    img {
+      position: absolute;
+      opacity: 0;
+      transition: all .4s ease;
+      visibility: hidden;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+
+      &:nth-child(1) {
+        position: relative;
+        transform: none;
+        left: 0;
+        top: 0;
+      }
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
 
     @media (max-width: $phone) {
       position: absolute;
@@ -532,7 +639,6 @@
 
 .trading {
   &__table {
-    height: 530px;
 
     @media (max-width: $phone) {
       height: 320px;

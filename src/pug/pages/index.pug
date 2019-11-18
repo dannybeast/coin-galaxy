@@ -15,10 +15,23 @@ block content
         +e.content
           +e.s-text
             +e.P.accent-title within 3 steps
-            +e.H2.title
-              span Open a Trade Account and 
-              strong start trade now!
+            
+            +e.titles
+              // 1
+              +e.H2.title(data-slide="0")
+                span Open a Trade Account and 
+                strong start trade now!
+              // 2
+              +e.H2.title(data-slide="1")
+                span Add wallets
+                strong start trade now!
+              // 3
+              +e.H2.title(data-slide="2")
+                span Trade!
+                strong start trade now!
+
           +b.intro-steps
+            +e.prev
             ul
               li.active
                 +e.P.count 1
@@ -29,8 +42,11 @@ block content
               li
                 +e.P.count 3
                 +e.P.name Trade!
+            +e.next
         +e.s-image
-          img(src="assets/images/1-open.png", alt="")
+          img(src="assets/images/1-open.png", alt="" data-slide="0")
+          img(src="assets/images/1-open.png", alt="" data-slide="1")
+          img(src="assets/images/1-open.png", alt="" data-slide="2")
     
     +b.ticker
       +e.item
@@ -146,7 +162,7 @@ block content
           input(type="radio", name="trading-filter", value="Other")
           span Other
       
-      +e.table( ss-container)
+      +e.table
         table.table.js-datatable-trading
           thead
             tr

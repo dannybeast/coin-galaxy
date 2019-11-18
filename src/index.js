@@ -1,6 +1,5 @@
 // JS
 import 'jquery.marquee';
-import SimpleScrollbar from 'simple-scrollbar';
 import './js/libs/jquery.viewportchecker.min';
 
 import './js/modules/language';
@@ -17,14 +16,68 @@ document.addEventListener("DOMContentLoaded", function (event) {
     loader.classList.add('hide');
 });
 
-
 $(document).ready(function () {
+
+    // slider
+    let i_slider = $('.intro-slider');
+    let i_slider_title = i_slider.find('.intro-slider__title');
+    let i_slider_img = i_slider.find('.intro-slider__s-image img');
+    let i_slider_nav = $('.intro-steps li');
+    let i__prev = $('.intro-steps__prev');
+    let i__next = $('.intro-steps__next');
+
+    hideSlide();
+    showSlide(0);
+
+    function hideSlide() {
+        i_slider_img.removeClass('show');
+        i_slider_title.removeClass('show');
+        i_slider_nav.removeClass('active');
+    }
+
+    function showSlide(index) {
+        hideSlide();
+        i_slider_img.eq(index).addClass('show');
+        i_slider_title.eq(index).addClass('show');
+        i_slider_nav.eq(index).addClass('active');
+
+        if (index === 0) {
+            i__prev.fadeOut();
+        } else {
+            i__prev.fadeIn();
+        }
+        if (index == i_slider_img.length - 1) {
+            i__next.fadeOut();
+        } else {
+            i__next.fadeIn();
+        }
+    }
+
+    i__next.click(function () {
+        let current = i_slider.find('.intro-steps li.active').index();
+        hideSlide();
+        showSlide(current + 1);
+    });
+    i__prev.click(function () {
+        let current = i_slider.find('.intro-steps li.active').index();
+        hideSlide();
+        showSlide(current - 1);
+    });
+
+    i_slider_nav.each(function (index) {
+        $(this).click(function () {
+            hideSlide();
+            showSlide(index);
+        });
+    });
+    //-
+
 
     // animate
     $('section').viewportChecker({
         classToAdd: 'active',
         offset: 100,
-        repeat: false
+        repeat: true
     });
 
     // marquee
