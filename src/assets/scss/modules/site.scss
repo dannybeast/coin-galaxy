@@ -501,10 +501,17 @@
 
 .trading {
   &__table {
+    white-space: nowrap;
 
-    @media (max-width: $phone) {
-      height: 320px;
+    .dataTables_scrollBody {
+      height: 500px;
+
+      @media (max-width: $phone) {
+        height: 320px;
+      }
     }
+
+
   }
 }
 

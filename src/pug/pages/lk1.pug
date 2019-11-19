@@ -16,7 +16,7 @@ block content
             +b.b-top
                 +e.H1.title Account summary
             .row
-                .col-md-4.col-sm-12.col-xs-12
+                .col-lg-4.col-md-12.col-sm-12.col-xs-12
                     +b.b-top
                         +b.filter
                             +b.LABEL.radio-button(class="--star")
@@ -83,7 +83,7 @@ block content
                                 +tr()
                                 +tr()
                                 +tr()
-                .col-md-8.col-sm-12.col-xs-12
+                .col-lg-8.col-md-12.col-sm-12.col-xs-12
                     +b.graph
                         img(src="assets/images/graph.png", alt="")
     +b.SECTION.l-section
@@ -225,7 +225,7 @@ block content
                             +e.th Price
                             +e.th Amount
                             +e.th Value
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="60%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -233,7 +233,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="30%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -241,7 +241,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="20%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -249,7 +249,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -257,7 +257,11 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -268,12 +272,12 @@ block content
                 .col-md-6.col-sm-6.col-xs-12.column
                     +b.b-top
                         +e.H1.title BUYING BTC
-                    +b.s-table
+                    +b.s-table(class="--gray")
                         +e.tr
                             +e.th Price
                             +e.th Amount
                             +e.th Value
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="70%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -281,7 +285,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="40%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -289,7 +293,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr(data-percent="25%")
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -297,7 +301,7 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -305,7 +309,11 @@ block content
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
-                        +e.tr(data-percent="80%")
+                        +e.tr
+                            +e.td 9 474.83900 USD
+                            +e.td 0.00390672 BTC
+                            +e.td 37.01554 USD
+                        +e.tr
                             +e.td 9 474.83900 USD
                             +e.td 0.00390672 BTC
                             +e.td 37.01554 USD
@@ -316,11 +324,11 @@ block content
     +b.SECTION.l-section
         +b.container(class="--p-large")
             .row
-                .col-lg-6.col-md-12.col-sm-12.col-xs-12
+                .col-lg-6.col-md-6.col-sm-12.col-xs-12
                     +b.b-top
                         +e.H1.title MARKET TRADE HISTORY
                     +b.l-block(class="--not-border")
-                        table.table.js-datatable.responsive(sort="false")
+                        table.table.table--small.js-datatable.responsive(sort="false")
                             thead
                                 tr
                                     th 
@@ -358,11 +366,11 @@ block content
                                 +tr()
                                 +tr()
                                 +tr()
-                .col-lg-6.col-md-12.col-sm-12.col-xs-12
+                .col-lg-6.col-md-6.col-sm-12.col-xs-12
                     +b.b-top
                         +e.H1.title MY TRADE HISTORY
                     +b.l-block(class="--not-border")
-                        table.table.js-datatable.responsive(sort="false")
+                        table.table.table--small.js-datatable.responsive(sort="false")
                             thead
                                 tr
                                     th 

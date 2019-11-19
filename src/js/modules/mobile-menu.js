@@ -21,15 +21,17 @@ if (document.querySelector('.header .nav ul')) {
     document.querySelector('body').insertAdjacentHTML("beforeEnd", mob_menu);
     document.querySelector('.mobile-menu__nav').append(header_menu);
 
-    if (viewportWidth <= 767) {
-        document.querySelector('.mobile-menu__buttons .container').append(header_buttons);
-    }
-
     header_help_links.forEach(function (ul) {
         let header_help_links_ul = ul.cloneNode(true);
         header_help_links_ul.classList.add('links');
         document.querySelector('.mobile-menu__nav').append(header_help_links_ul);
     });
+
+
+    document.querySelector('.mobile-menu__buttons .container').append(header_buttons);
+
+
+
 }
 
 

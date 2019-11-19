@@ -15,15 +15,14 @@ let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
 if (document.querySelector('.header-lk .nav-lk ul')) {
     let header_menu = document.querySelector('.header-lk .nav-lk ul').cloneNode(true);
-
+    let header_buttons = document.querySelector('.header-lk__buttons').cloneNode(true);
 
     document.querySelector('.header-lk__right').insertAdjacentHTML("beforeEnd", menu_btn);
     document.querySelector('body').insertAdjacentHTML("beforeEnd", mob_menu);
     document.querySelector('.mobile-menu__nav').append(header_menu);
 
-    // if (viewportWidth <= 767) {
-    //     document.querySelector('.mobile-menu__buttons .container').append(header_buttons);
-    // }
+    document.querySelector('.mobile-menu__buttons .container').append(header_buttons);
+
 
 }
 

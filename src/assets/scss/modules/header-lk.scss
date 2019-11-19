@@ -170,22 +170,34 @@
     font-weight: 700;
     font-size: rem(11px);
     color: #001326;
-    padding-top: 5px;
-    padding-bottom: 5px;
+
     letter-spacing: 0.44px;
 
-    @media (max-width: $phone) {
-        display: none;
-        height: 0;
-    }
 
     &__right {
+        padding-top: 5px;
+        padding-bottom: 5px;
+
         a {
             margin-left: 30px;
 
             &:first-child {
                 margin-left: 0;
             }
+        }
+
+        @media (max-width: $phone) {
+            white-space: nowrap;
+            overflow-x: auto;
+
+            a {
+                margin-left: 20px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
         }
     }
 
@@ -206,6 +218,7 @@
         @media (max-width: $phone) {
             width: 100%;
             margin-bottom: 5px;
+            display: none;
 
             &:last-child {
                 margin-bottom: 0;

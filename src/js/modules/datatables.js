@@ -1,20 +1,23 @@
 import 'datatables.net-dt/js/dataTables.dataTables.min';
 import '../libs/dataTables.responsive.min';
-import '../libs/jquery.scrollbar.min';
+import '../libs/jquery.scrollbar';
 
 let t_table = ".js-datatable-trading";
 let r_table = ".js-datatable-rates";
 let table = ".js-datatable";
 let s_tableClass = ".js-datatable-summary";
+let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
 // datatables
 var t_datatable = $(t_table).DataTable({
     "paging": false,
-    responsive: true,
     "order": [],
     "autoWidth": false,
     "scrollY": "500px",
-    //"scrollCollapse": true,
+    "searching": false,
+    "info": false,
+    "sScrollX": '100%',
+    "responsive": true,
     columnDefs: [{
             responsivePriority: 1,
             targets: 0
@@ -54,9 +57,9 @@ $(table).each(function () {
         "order": [],
         'ordering': p_sorting,
         "pageLength": p_length,
-        "bScrollCollapse": true,
-        responsive: true,
+        //"scrollX": '100%',
         "autoWidth": false,
+        //responsive: true,
         columnDefs: [{
                 responsivePriority: 1,
                 targets: 0
@@ -65,15 +68,21 @@ $(table).each(function () {
                 responsivePriority: 2,
                 targets: -1
             }
-        ]
+        ],
+        "fnInitComplete": function () {
+
+            $('.dataTables_scrollBody').scrollbar();
+        }
     });
 });
 
 let s_table = $(s_tableClass).DataTable({
     "order": [],
-    "pageLength": 9999,
-    responsive: true,
+    "paging": false,
+    "sScrollX": '100%',
+    "scrollY": "350px",
     "autoWidth": false,
+    responsive: true,
     columnDefs: [{
             responsivePriority: 1,
             targets: 0
@@ -82,10 +91,11 @@ let s_table = $(s_tableClass).DataTable({
             responsivePriority: 2,
             targets: -1
         }
-    ]
+    ],
+    "fnInitComplete": function () {
+        $('.dataTables_scrollBody').scrollbar();
+    }
 });
-
-
 $('#summary').on('keyup', function () {
     s_table.search(this.value).draw();
 });

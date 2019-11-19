@@ -218,10 +218,16 @@ section,
         background: #022244;
         position: relative;
         z-index: 2;
+        display: none;
 
-        .header__buttons {
+        .header__buttons,
+        .header-lk__buttons {
             display: flex !important;
             padding: 10px 0;
+        }
+
+        @media (max-width: $phone) {
+            display: block;
         }
     }
 
@@ -393,7 +399,7 @@ section,
     justify-content: center;
     margin: -5px;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $desktop) {
         width: 100%;
         margin: 0;
     }
@@ -480,10 +486,6 @@ section,
 
 .dataTables_scroll {
     width: 100%;
-}
-
-.dataTables_scrollBody {
-    height: 500px;
 }
 
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
@@ -633,12 +635,13 @@ section,
         }
 
         @media (max-width: $tablet) {
-            font-size: rem(18px);
+            font-size: rem(22px);
         }
 
         @media (max-width: $phone) {
             padding-left: rem(40px);
             font-weight: 400;
+            font-size: rem(18px);
         }
 
         &:hover {
@@ -676,7 +679,7 @@ section,
         }
 
         @media (max-width: $phone) {
-            padding-left: 0;
+            padding-left: 0 !important;
         }
     }
 }

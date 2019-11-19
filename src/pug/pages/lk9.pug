@@ -17,7 +17,7 @@ block content
                 +e.H1.title Settings
             form()
                 .row
-                    .col-md-6
+                    .col-md-6.col-sm-6.col-xs-12
                         +b.field(class="--mb-large")
                             label Enter name
                             input(type="text")
@@ -27,7 +27,7 @@ block content
                         +b.field(class="--mb-large")
                             label Password
                             input(type="password")
-                    .col-md-6
+                    .col-md-6.col-sm-6.col-xs-12
                         +b.field(class="--mb-large")
                             label Login
                             input(type="text")
@@ -37,12 +37,12 @@ block content
                         +b.field(class="--mb-large")
                             label Confirm password
                             input(type="password")
-                    .col-md-12
+                    .col-md-12.col-sm-12.col-xs-12
                         +b.LABEL.checkbox-switch
                             input(type="checkbox")
                             +e.SPAN.content 
                               span 2FA Authentification
-                    .col-md-12
+                    .col-md-12.col-sm-12.col-xs-12
                         +btn('Save settings', '--warning --color-dark --small')
     +b.SECTION.l-section
         +b.container(class="--p-large")
@@ -50,7 +50,7 @@ block content
                 +e.H3.title wallets
             form()
                 .row
-                    .col-md-6
+                    .col-md-6.col-sm-6.col-xs-12
                         +b.field(class="--mb-large")
                             label Wallet number
                             input(type="text")
@@ -60,7 +60,7 @@ block content
                         +b.field(class="--mb-large")
                             label Wallet number
                             input(type="text")
-                    .col-md-12
+                    .col-md-12.col-sm-12.col-xs-12
                         +btn('Save wallet info', '--warning --color-dark --small')
 block script
     script(src="assets/js/vendors.js")

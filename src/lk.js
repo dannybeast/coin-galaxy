@@ -17,33 +17,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 // slider trading-info
-// let tr_slider = document.querySelector('.trading-info .js-swiper');
-// if (tr_slider) {
-//     new Glider(tr_slider, {
-//         slidesToShow: 6,
-//         slidesToScroll: 1,
-//         draggable: true,
-//         scrollLock: true,
-//         responsive: [{
-//             breakpoint: 0,
-//             settings: {
-//                 slidesToShow: 1.5,
-//             }
-//         }, {
-//             breakpoint: 767,
-//             settings: {
-//                 slidesToShow: 3.5
-//             }
-//         }, {
-//             breakpoint: 1024,
-//             settings: {
-//                 slidesToShow: 4.5,
-//             }
-//         }]
-//     });
-// }
+let tr_slider = document.querySelector('.trading-info__row');
+if (tr_slider) {
+    new Glider(tr_slider, {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        draggable: true,
+        responsive: [{
+            breakpoint: 0,
+            settings: {
+                slidesToShow: 2.5,
+            }
+        }, {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 3.5
+            }
+        }, {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4.5,
+            }
+        }]
+    });
+}
 
 $(document).ready(function () {
+
+    $('.scrollbar-inner').scrollbar();
 
     // animate
     $('section').viewportChecker({
@@ -51,5 +52,15 @@ $(document).ready(function () {
         offset: 100,
         repeat: true
     });
+
+
+    // s-table indicators
+    let tr = $('.s-table__tr[data-percent]');
+    tr.each(function () {
+        let width = $(this).data('percent');
+        $(this).append(`<span class="s-table__indicator" style="width:${width}"></span>`)
+    });
+    //-
+
 
 });
