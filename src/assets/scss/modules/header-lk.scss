@@ -63,6 +63,10 @@
 
     ul {
         display: flex;
+
+        @media (max-width: $phone) {
+            flex-wrap: wrap;
+        }
     }
 
     a {
@@ -77,6 +81,10 @@
 
     li {
         flex-grow: 1;
+
+        @media (max-width: $phone) {
+            width: 50%;
+        }
 
         &.active {
             background: #fff;
@@ -166,9 +174,18 @@
     padding-bottom: 5px;
     letter-spacing: 0.44px;
 
+    @media (max-width: $phone) {
+        display: none;
+        height: 0;
+    }
+
     &__right {
         a {
             margin-left: 30px;
+
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
 
@@ -185,6 +202,15 @@
                 text-decoration: none;
             }
         }
+
+        @media (max-width: $phone) {
+            width: 100%;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
     a {
@@ -195,6 +221,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: $phone) {
+            flex-wrap: wrap;
+        }
     }
 
 
@@ -220,7 +250,7 @@
 
     .menu-button {
         display: none;
-        margin-left: 0;
+        margin-left: 15px;
 
         @media (max-width: $desktop) {
             display: flex;
@@ -230,7 +260,7 @@
     &__logo {
         width: rem(120px);
         display: block;
-        margin-right: rem(30px);
+        margin-right: rem(15px);
 
         img {
             display: block;
@@ -329,10 +359,6 @@
         }
     }
 
-    @media (max-width: $desktop-xl) {
-        padding: rem(45px) 30px;
-    }
-
     @media (max-width: $desktop) {
         padding: 15px !important;
 
@@ -342,6 +368,9 @@
     }
 
     @media (max-width: $phone) {
+        .container {
+            padding: 0;
+        }
 
         &__buttons {
             display: none;

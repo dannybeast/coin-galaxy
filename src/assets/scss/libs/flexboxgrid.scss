@@ -464,7 +464,7 @@
   }
 }
 
-@media only screen and (min-width: 62em) {
+@media only screen and (min-width: 1024px) {
   /* .container {
     width: 62rem;
   } */
@@ -679,7 +679,7 @@
   }
 }
 
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: 1260px) {
   /* .container {
     width: 72rem;
   } */
@@ -900,6 +900,11 @@
     .row {
       margin-right: -3rem;
       margin-left: -3rem;
+
+      @media (max-width: $desktop) {
+        margin-right: -1.5rem;
+        margin-left: -1.5rem;
+      }
     }
 
     .col-xs,
@@ -917,6 +922,11 @@
     .col-xs-12 {
       padding-right: 3rem;
       padding-left: 3rem;
+
+      @media (max-width: $desktop) {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
     }
 
     @media only screen and (min-width: 48em) {
@@ -936,6 +946,11 @@
       .col-sm-12 {
         padding-right: 3rem;
         padding-left: 3rem;
+
+        @media (max-width: $desktop) {
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
+        }
       }
     }
 
@@ -956,6 +971,11 @@
       .col-md-12 {
         padding-right: 3rem;
         padding-left: 3rem;
+
+        @media (max-width: $desktop) {
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
+        }
       }
     }
 
@@ -976,6 +996,11 @@
       .col-lg-12 {
         padding-right: 3rem;
         padding-left: 3rem;
+
+        @media (max-width: $desktop) {
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
+        }
       }
     }
   }

@@ -1,7 +1,6 @@
 import 'datatables.net-dt/js/dataTables.dataTables.min';
 import '../libs/dataTables.responsive.min';
 import '../libs/jquery.scrollbar.min';
-//import '../libs/datatablesFixed';
 
 let t_table = ".js-datatable-trading";
 let r_table = ".js-datatable-rates";
@@ -28,7 +27,6 @@ var t_datatable = $(t_table).DataTable({
     "fnInitComplete": function () {
         $('.dataTables_scrollBody').scrollbar();
     }
-
 })
 
 
@@ -56,6 +54,7 @@ $(table).each(function () {
         "order": [],
         'ordering': p_sorting,
         "pageLength": p_length,
+        "bScrollCollapse": true,
         responsive: true,
         "autoWidth": false,
         columnDefs: [{

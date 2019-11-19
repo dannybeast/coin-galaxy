@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 $(document).ready(function () {
 
-    // slider
+    // slider intro
     let i_slider = $('.intro-slider');
     let i_slider_title = i_slider.find('.intro-slider__title');
     let i_slider_img = i_slider.find('.intro-slider__s-image img');

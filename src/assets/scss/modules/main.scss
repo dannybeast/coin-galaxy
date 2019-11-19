@@ -63,11 +63,9 @@ section,
     opacity: 0;
     transition: transform 1s ease,
         opacity 1s ease;
-    transform: translateY(-10px);
 
     &.active {
         opacity: 1;
-        transform: none;
     }
 
     @media (max-width: $phone) {
@@ -94,6 +92,145 @@ section,
 }
 
 ///////////
+
+.menu-button {
+    width: 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__inner {
+        width: 30px;
+        height: 23px;
+        display: block;
+        position: relative;
+        margin: 0px;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: 0.25s ease-in-out;
+            background: #fff;
+
+            &:nth-child(1) {
+                top: 0px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(2) {
+                top: 10px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(3) {
+                top: 20px;
+                transform-origin: left center;
+            }
+        }
+
+        &.open span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                top: 0px;
+                left: 8px;
+            }
+
+            &:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 21px;
+                left: 8px;
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    display: none;
+    z-index: 790;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+
+    a {
+        text-decoration: none;
+    }
+
+    &__nav {
+        overflow: auto;
+        max-height: calc(100% - 60px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        ul {
+            margin-bottom: 15px;
+            width: 100%;
+
+            li {
+                a {
+                    display: block;
+                    padding: 15px;
+                    font-size: 18px;
+                    color: #000;
+                    border-bottom: 1px solid rgb(221, 228, 239);
+                }
+
+                &.active {
+                    a {
+                        color: $warning-color !important;
+                    }
+                }
+            }
+
+            &.links {
+                width: 50%;
+
+                li {
+                    a {
+                        font-size: 15px;
+                        border: none;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__buttons {
+        background: #022244;
+        position: relative;
+        z-index: 2;
+
+        .header__buttons {
+            display: flex !important;
+            padding: 10px 0;
+        }
+    }
+
+    @media (max-width: $desktop) {
+        &.open {
+            display: block;
+        }
+    }
+}
 
 @mixin tableStyle() {
     .btn {
@@ -256,6 +393,11 @@ section,
     justify-content: center;
     margin: -5px;
 
+    @media (max-width: $tablet) {
+        width: 100%;
+        margin: 0;
+    }
+
     &__search {
         position: relative;
 
@@ -272,6 +414,10 @@ section,
             transform: translateY(-50%);
         }
 
+        @media (max-width: 1395px) {
+            width: calc(100% - 15px);
+        }
+
         input {
             height: 27px;
             font-size: 12px;
@@ -280,6 +426,10 @@ section,
             padding-right: 30px;
             width: 125px;
             border: 1px solid #a7b8c9;
+
+            @media (max-width: 1395px) {
+                width: 100%;
+            }
         }
     }
 
@@ -482,10 +632,13 @@ section,
             padding-left: rem(60px);
         }
 
+        @media (max-width: $tablet) {
+            font-size: rem(18px);
+        }
+
         @media (max-width: $phone) {
             padding-left: rem(40px);
             font-weight: 400;
-            font-size: rem(18px);
         }
 
         &:hover {
@@ -523,7 +676,7 @@ section,
         }
 
         @media (max-width: $phone) {
-            padding-left: rem(40px);
+            padding-left: 0;
         }
     }
 }
