@@ -226,6 +226,9 @@ section,
             display: flex !important;
             padding: 10px 0;
         }
+        .header-lk__buttons .btn--i-user span{
+            max-width: 130px;
+        }
 
         @media (max-width: $phone) {
             display: block;
@@ -502,8 +505,11 @@ section,
     width: 100%;
     white-space: nowrap;
 }
+.dataTables_paginate{
+    margin-top: 25px !important;
+}
 
-.scr-y-none {
+.scroll-content.scr-y-none {
     padding-bottom: 15px !important;
 
     .scroll-y {

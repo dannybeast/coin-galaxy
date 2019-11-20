@@ -1,7 +1,7 @@
 // Fonts here
 @font-face {
     font-family: 'Acrom';
-    src: url('/assets/fonts/Acrom/Acrom-Thin.woff') format('woff');
+    src: url('../fonts/Acrom/Acrom-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Acrom';
-    src: url('/assets/fonts/Acrom/Acrom-Medium.woff') format('woff');
+    src: url('../fonts/Acrom/Acrom-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: 'Acrom';
-    src: url('/assets/fonts/Acrom/Acrom-Regular.woff') format('woff');
+    src: url('../fonts/Acrom/Acrom-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
     font-family: 'Acrom';
-    src: url('/assets/fonts/Acrom/Acrom-Light.woff') format('woff');
+    src: url('../fonts/Acrom/Acrom-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -36,7 +36,7 @@
 //     font-family: 'SF UI Display';
 //     font-style: normal;
 //     font-weight: 100;
-//     src: local('SF UI Display Thin'), url('/assets/fonts/sf-ui-display/sf-ui-display-thin.woff') format('woff');
+//     src: local('SF UI Display Thin'), url('../fonts/sf-ui-display/sf-ui-display-thin.woff') format('woff');
 // }
 
 
@@ -45,7 +45,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 300;
-    src: local('SF UI Display Light'), url('/assets/fonts/sf-ui-display/sf-ui-display-light.woff') format('woff');
+    src: local('SF UI Display Light'), url('../fonts/sf-ui-display/sf-ui-display-light.woff') format('woff');
 }
 
 @font-face {
@@ -54,7 +54,7 @@
     font-display: swap;
     font-weight: 400;
     src: local('SF UI Display Regular'),
-        url('/assets/fonts/sf-ui-display/SFUIDisplay-Regular.woff') format('woff');
+        url('../fonts/sf-ui-display/SFUIDisplay-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -62,7 +62,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 500;
-    src: local('SF UI Display Medium'), url('/assets/fonts/sf-ui-display/sf-ui-display-medium.woff') format('woff');
+    src: local('SF UI Display Medium'), url('../fonts/sf-ui-display/sf-ui-display-medium.woff') format('woff');
 }
 
 
@@ -70,7 +70,7 @@
 //     font-family: 'SF UI Display';
 //     font-style: normal;
 //     font-weight: 600;
-//     src: local('SF UI Display Semibold'), url('/assets/fonts/sf-ui-display/sf-ui-display-semibold.woff') format('woff');
+//     src: local('SF UI Display Semibold'), url('../fonts/sf-ui-display/sf-ui-display-semibold.woff') format('woff');
 // }
 
 
@@ -79,12 +79,12 @@
     font-style: normal;
     font-display: swap;
     font-weight: 700;
-    src: local('SF UI Display Bold'), url('/assets/fonts/sf-ui-display/sf-ui-display-bold.woff') format('woff');
+    src: local('SF UI Display Bold'), url('../fonts/sf-ui-display/sf-ui-display-bold.woff') format('woff');
 }
 
 // @font-face {
 //     font-family: 'SF UI Display';
 //     font-style: normal;
 //     font-weight: 800;
-//     src: local('SF UI Display Black'), url('/assets/fonts/sf-ui-display/sf-ui-display-black.woff') format('woff');
+//     src: local('SF UI Display Black'), url('../fonts/sf-ui-display/sf-ui-display-black.woff') format('woff');
 // }

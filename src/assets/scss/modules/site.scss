@@ -232,8 +232,10 @@
   li {
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: rem(80px);
-    padding: rem(15px) rem(20px);
+    width: 60px;
+    height: 60px;
     border: 2px solid #4f6377;
     line-height: 1;
     margin-right: rem(60px);
@@ -283,7 +285,9 @@
 
     &.active {
       border-color: $warning-color;
-
+width: auto;
+padding-left: rem(20px);
+padding-right: rem(20px);
       #{$parent}__name {
         position: relative;
         left: 0;
@@ -483,7 +487,7 @@
 .intro {
   padding-top: 0;
   padding-bottom: 0;
-  background: url("/assets/images/intro.png") center no-repeat;
+  background: url("../images/intro.png") center no-repeat;
   background-size: cover;
   color: #fff;
 
@@ -1426,7 +1430,7 @@
 }
 
 .form-page {
-  background: url("/assets/images/login-bg.jpg") center top no-repeat;
+  background: url("../images/login-bg.jpg") center top no-repeat;
   min-height: 100vh;
   background-size: cover;
   display: flex;

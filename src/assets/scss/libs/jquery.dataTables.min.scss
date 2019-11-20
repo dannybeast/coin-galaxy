@@ -111,7 +111,7 @@
                         width: 18px;
                         height: 5px;
                         display: block;
-                        background: url('/assets/images/sort.png') center no-repeat;
+                        background: url('../images/sort.png') center no-repeat;
                         margin-left: 5px;
                     }
 
@@ -148,7 +148,7 @@
             .sorting_asc {
                 span {
                     &:after {
-                        background: url('/assets/images/sort2.png') center no-repeat;
+                        background: url('..//sort2.png') center no-repeat;
                         // transform: rotate(-136deg);
                         // margin-top: 5px;
                     }
@@ -158,7 +158,7 @@
             .sorting_desc {
                 span {
                     &:after {
-                        background: url('/assets/images/sort3.png') center no-repeat;
+                        background: url('..//sort3.png') center no-repeat;
                     }
                 }
             }

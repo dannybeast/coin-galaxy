@@ -112,11 +112,18 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // by default it uses publicPath in webpackOptions.output
+              publicPath: '../'
+            },
+          },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              url: false
             }
           }, {
             loader: 'postcss-loader',
@@ -137,11 +144,18 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // by default it uses publicPath in webpackOptions.output
+              publicPath: '../'
+            },
+          },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              url: false
             }
           }, {
             loader: 'postcss-loader',
