@@ -23,12 +23,12 @@ block content
                 strong start trade now!
               // 2
               +e.H2.title(data-slide="1")
-                span Add wallets
-                strong start trade now!
+                span Add any wallets
+                strong in your account
               // 3
               +e.H2.title(data-slide="2")
-                span Trade!
-                strong start trade now!
+                span Trade with!
+                strong another members
 
           +b.intro-steps
             +e.prev
@@ -45,8 +45,8 @@ block content
             +e.next
         +e.s-image
           img(src="assets/images/1-open.png", alt="" data-slide="0")
-          img(src="assets/images/1-open.png", alt="" data-slide="1")
-          img(src="assets/images/1-open.png", alt="" data-slide="2")
+          img(src="assets/images/2-wallets.png", alt="" data-slide="1")
+          img(src="assets/images/3-trade.png", alt="" data-slide="2")
     
     +b.ticker
       +e.item
@@ -93,7 +93,7 @@ block content
 
       +e.block
         +b.s-arrow(class="--prev")
-        .js-course-slider
+        .js-course-slider.glider-wrap
           +b.course-item
             +e.icon
               img(src="assets/images/currency/btc.png", alt="")
@@ -141,7 +141,7 @@ block content
                 p 24H volume 0.00000000 BTC 
         +b.s-arrow(class="--next")
   +b.SECTION.trading
-    .container
+    .container.js-radio-tabs
       +b.filter
         +b.LABEL.radio-button
           input(type="radio", name="trading-filter", value="BTC", checked)
@@ -163,69 +163,90 @@ block content
           span Other
       
       +e.table
-        table.table.js-datatable-trading
-          thead
-            tr
-              th 
-                span Pair
-              th 
-                span Volume (24h)
-              th 
-                span Last price
-              th 
-                span Change (24h)
-              th 
-                span High (24h)
-              th 
-                span Low (24h)
-              th 
-                span Price Graph (7d)
-              th 
-                span Trading Page
-          tbody
-            mixin tr()
+        mixin trading-table()
+          table.table.js-datatable-trading
+            thead
               tr
-                td 
-                  +b.pair
-                    +e.icon
-                      img(src="assets/images/currency/iex.png", alt="")
-                    strong IEX/BTC
-                td 0.02 BTC
-                td 8 495.90899 USD
-                td 
-                  +b.P.status(class="--orange") -1.09%
-                td 0.0000011 BTC
-                td 0.0000011 BTC
-                td
-                  +b.graph
-                    img(src="assets/images/graph.jpg", alt="")
-                td
-                  +b.A(href="#", class="btn --warning --i-next")
-                    span Trade
-              tr
-                td 
-                  +b.pair
-                    +e.icon
-                      img(src="assets/images/currency/btc1.png", alt="")
-                    strong BTC/USD
-                td 1 909.41 BTC
-                td 8 495.90899 USD
-                td 
-                  +b.P.status(class="--green") +4.09%
-                td 8 700 USD
-                td 8 700 USD
-                td
-                  +b.graph
-                    img(src="assets/images/graph.jpg", alt="")
-                td
-                  +b.A(href="#", class="btn --warning --i-next")
-                    span Trade
-            +tr()
-            +tr()
-            +tr()
-            +tr()
-            +tr()
-            +tr()
+                th 
+                  span Pair
+                th 
+                  span Volume (24h)
+                th 
+                  span Last price
+                th 
+                  span Change (24h)
+                th 
+                  span High (24h)
+                th 
+                  span Low (24h)
+                th 
+                  span Price Graph (7d)
+                th 
+                  span Trading Page
+            tbody
+              mixin tr()
+                tr
+                  td 
+                    +b.pair
+                      +e.icon
+                        img(src="assets/images/currency/iex.png", alt="")
+                      strong IEX/BTC
+                  td 0.02 BTC
+                  td 8 495.90899 USD
+                  td 
+                    +b.P.status(class="--orange") -1.09%
+                  td 0.0000011 BTC
+                  td 0.0000011 BTC
+                  td
+                    +b.graph-small
+                      img(src="assets/images/graph.jpg", alt="")
+                  td
+                    +b.A(href="#", class="btn --warning --i-next")
+                      span Trade
+                tr
+                  td 
+                    +b.pair
+                      +e.icon
+                        img(src="assets/images/currency/btc1.png", alt="")
+                      strong BTC/USD
+                  td 1 909.41 BTC
+                  td 8 495.90899 USD
+                  td 
+                    +b.P.status(class="--green") +4.09%
+                  td 8 700 USD
+                  td 8 700 USD
+                  td
+                    +b.graph-small
+                      img(src="assets/images/graph.jpg", alt="")
+                  td
+                    +b.A(href="#", class="btn --warning --i-next")
+                      span Trade
+              +tr()
+              +tr()
+              +tr()
+              +tr()
+              +tr()
+              +tr()
+      
+        // BTC
+        div(data-tab-content="BTC")
+            +trading-table()
+        // ETH
+        div(data-tab-content="ETH")
+            +trading-table()
+        // LTC
+        div(data-tab-content="LTC")
+            +trading-table()
+        // USD
+        div(data-tab-content="USD")
+            +trading-table()
+        // RUR
+        div(data-tab-content="RUR")
+            +trading-table()
+        // Other
+        div(data-tab-content="Other")
+            +trading-table()
+            
       +e.buttons
         +btn-link('#', 'Show more', '--primary')
 

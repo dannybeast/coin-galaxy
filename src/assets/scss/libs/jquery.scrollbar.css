@@ -18,7 +18,13 @@
     padding: 0;
     position: relative !important;
     top: 0;
-    width: auto !important;
+    width: 100% !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-wrapper>.scroll-content::-webkit-scrollbar {
+    display: none;
 }
 
 .scroll-wrapper>.scroll-content::-webkit-scrollbar {
@@ -79,8 +85,8 @@
 
 /*************** SIMPLE INNER SCROLLBAR ***************/
 
-.dataTables_scrollBody>.scroll-element,
-.dataTables_scrollBody>.scroll-element div {
+.scrollbar-inner>.scroll-element,
+.scrollbar-inner>.scroll-element div {
     border: none;
     margin: 0;
     padding: 0;
@@ -88,7 +94,7 @@
     z-index: 10;
 }
 
-.dataTables_scrollBody>.scroll-element div {
+.scrollbar-inner>.scroll-element div {
     display: block;
     height: 100%;
     left: 0;
@@ -96,56 +102,56 @@
     width: 100%;
 }
 
-.dataTables_scrollBody>.scroll-element.scroll-x {
+.scrollbar-inner>.scroll-element.scroll-x {
     bottom: 0;
     height: 5px;
     left: 0;
     width: 100%;
 }
 
-.dataTables_scrollBody>.scroll-element.scroll-y {
+.scrollbar-inner>.scroll-element.scroll-y {
     height: 100%;
     right: 0px;
     top: 0;
     width: 5px;
 }
 
-.dataTables_scrollBody>.scroll-element .scroll-element_outer {
+.scrollbar-inner>.scroll-element .scroll-element_outer {
     overflow: hidden;
 }
 
-.dataTables_scrollBody>.scroll-element .scroll-element_track {
+.scrollbar-inner>.scroll-element .scroll-element_track {
     background-color: #e0e3e8;
 }
 
-.dataTables_scrollBody>.scroll-element .scroll-bar {
+.scrollbar-inner>.scroll-element .scroll-bar {
     background-color: #052e5c;
 }
 
-.dataTables_scrollBody>.scroll-element:hover .scroll-bar {
+.scrollbar-inner>.scroll-element:hover .scroll-bar {
     background-color: #052e5c;
 }
 
-.dataTables_scrollBody>.scroll-element.scroll-draggable .scroll-bar {
+.scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar {
     background-color: #052e5c;
 }
 
 
 /* update scrollbar offset if both scrolls are visible */
 
-.dataTables_scrollBody>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
     left: -12px;
 }
 
-.dataTables_scrollBody>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
     top: -12px;
 }
 
 
-.dataTables_scrollBody>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
     left: -12px;
 }
 
-.dataTables_scrollBody>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
     top: -12px;
 }

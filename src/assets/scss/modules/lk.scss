@@ -486,10 +486,6 @@
     overflow-x: visible;
 }
 
-.js-datatable {
-    white-space: nowrap;
-}
-
 .trading-info {
     background: #e0e3e8;
     padding: 5px 0;
@@ -676,6 +672,7 @@
                     letter-spacing: 1.16px;
                     text-transform: uppercase !important;
                     border-bottom: 1px solid #000 !important;
+                    padding: 10px 5px !important;
                     font-size: 11px;
                     color: rgba(#1a2c3e, 0.6) !important;
                 }
@@ -684,7 +681,7 @@
             tbody {
                 td {
                     border: none;
-                    padding: 12px !important;
+                    padding: 10px 5px !important;
                     font-weight: 400;
                     font-size: 12px;
 
@@ -844,7 +841,7 @@
         }
     }
 
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-sm) {
         margin-bottom: 30px;
         height: auto;
     }

@@ -26,7 +26,7 @@ block content
                     +btn('COPY', '--warning --color-dark --small js-copy-button')
     
     +b.SECTION.l-section
-        .container
+        .container.js-radio-tabs
             +b.b-top
                 +e.H1.title Referrals list
                 +b.filter
@@ -40,58 +40,66 @@ block content
                         input(type="radio", name="trading-filter", value="ALL", checked)
                         span ALL
             +b.datatable-module(class="--lk")
-                table.table.js-datatable.responsive(data-page-size="8")
-                    thead
-                        tr
-                            th 
-                                span Time
-                            th 
-                                span Type
-                            th 
-                                span Pair
-                            th 
-                                span Amount
-                            th 
-                                span Price
-                            th 
-                                span Value
-                            th 
-                                span Status
-                    tbody
-                        mixin tr2()
+                mixin tr2()
+                    tr
+                        td 01/11/2019
+                        td Type
+                        td USD/BTC
+                        td 121.32 USD
+                        td 121.32 USD
+                        td 121.32 USD
+                        td
+                            +b.status(class="--green") Approved
+                    tr
+                        td 01/11/2019
+                        td Type
+                        td USD/BTC
+                        td 121.32 USD
+                        td 121.32 USD
+                        td 121.32 USD
+                        td
+                            +b.status(class="--red") Delay
+                mixin referrals-table()
+                    table.table.js-datatable.responsive(data-page-size="8")
+                        thead
                             tr
-                                td 01/11/2019
-                                td Type
-                                td USD/BTC
-                                td 121.32 USD
-                                td 121.32 USD
-                                td 121.32 USD
-                                td
-                                    +b.status(class="--green") Approved
-                            tr
-                                td 01/11/2019
-                                td Type
-                                td USD/BTC
-                                td 121.32 USD
-                                td 121.32 USD
-                                td 121.32 USD
-                                td
-                                    +b.status(class="--red") Delay
-                            
-                           
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-                        +tr2()
-    
+                                th 
+                                    span Time
+                                th 
+                                    span Type
+                                th 
+                                    span Pair
+                                th 
+                                    span Amount
+                                th 
+                                    span Price
+                                th 
+                                    span Value
+                                th 
+                                    span Status
+                        tbody
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+                            +tr2()
+
+                // BTC
+                div(data-tab-content="BTC")
+                    +referrals-table()
+                // USD
+                div(data-tab-content="USD")
+                    +referrals-table()
+                // ALL
+                div(data-tab-content="ALL")
+                    +referrals-table()
     
     
 block script

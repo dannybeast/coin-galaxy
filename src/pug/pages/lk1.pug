@@ -17,72 +17,93 @@ block content
                 +e.H1.title Account summary
             .row
                 .col-lg-4.col-md-12.col-sm-12.col-xs-12
-                    +b.b-top
-                        +b.filter
-                            +b.LABEL.radio-button(class="--star")
-                                input(type="radio", name="summary-filter", value="STAR")
-                                span
-                            +b.LABEL.radio-button
-                                input(type="radio", name="summary-filter", value="BTC" checked)
-                                span BTC
-                            +b.LABEL.radio-button
-                                input(type="radio", name="summary-filter", value="ETH")
-                                span ETH
-                            +b.LABEL.radio-button
-                                input(type="radio", name="summary-filter", value="LTC")
-                                span LTC
-                            +b.LABEL.radio-button
-                                input(type="radio", name="summary-filter", value="USD")
-                                span USD
-                            +b.LABEL.radio-button
-                                input(type="radio", name="summary-filter", value="RUR")
-                                span RUR
-                            +e.LABEL.search
-                                input(type="text", placeholder="Search")#summary
-                    +b.datatable-module(class="--small --summary")
-                        table.table.js-datatable-summary.responsive
-                            thead
-                                tr
-                                    th 
-                                        span Pair
-                                    th 
-                                        span Volume (24h)
-                                    th 
-                                        span Last price
-                                    th 
-                                        span Change
-                            tbody
-                                mixin tr()
-                                    tr
-                                        td 
-                                            +b.pair(class="--small")
-                                                +e.icon
-                                                    img(src="assets/images/currency/iex.png", alt="")
-                                                strong IEX/BTC
-                                        td 0.02 BTC
-                                        td 8 495.90899 USD
-                                    
-                                        td 
-                                            +b.status(class="--orange") -1.25%
-                                    tr
-                                        td 
-                                            +b.pair(class="--small")
-                                                +e.icon
-                                                    img(src="assets/images/currency/btc1.png", alt="")
-                                                strong BTC/USD
-                                        td 0.02 BTC
-                                        td 8 495.90899 USD
-                                    
-                                        td 
-                                            +b.status(class="--green") +4.25%  
-                                +tr()
-                                +tr()
-                                +tr()
-                                +tr()
-                                +tr()
-                                +tr()
-                                +tr()
-                                +tr()
+                    +b.js-radio-tabs
+                        +b.b-top
+                            +b.filter
+                                +b.LABEL.radio-button(class="--star")
+                                    input(type="radio", name="summary-filter", value="Favorites")
+                                    span
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="summary-filter", value="BTC" checked)
+                                    span BTC
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="summary-filter", value="ETH")
+                                    span ETH
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="summary-filter", value="LTC")
+                                    span LTC
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="summary-filter", value="USD")
+                                    span USD
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="summary-filter", value="RUR")
+                                    span RUR
+                                +e.LABEL.search
+                                    input(type="text", placeholder="Search")#summary-search
+                        mixin tab()
+                            +b.datatable-module(class="--small --summary")
+                                table.table.js-datatable-summary.responsive
+                                    thead
+                                        tr
+                                            th 
+                                                span Pair
+                                            th 
+                                                span Volume (24h)
+                                            th 
+                                                span Last price
+                                            th 
+                                                span Change
+                                    tbody
+                                        mixin tr()
+                                            tr
+                                                td 
+                                                    +b.pair(class="--small")
+                                                        +e.icon
+                                                            img(src="assets/images/currency/iex.png", alt="")
+                                                        strong IEX/BTC
+                                                td 0.02 BTC
+                                                td 8 495.90899 USD
+                                            
+                                                td 
+                                                    +b.status(class="--orange") -1.25%
+                                            tr
+                                                td 
+                                                    +b.pair(class="--small")
+                                                        +e.icon
+                                                            img(src="assets/images/currency/btc1.png", alt="")
+                                                        strong BTC/USD
+                                                td 0.02 BTC
+                                                td 8 495.90899 USD
+                                            
+                                                td 
+                                                    +b.status(class="--green") +4.25%  
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                                        +tr()
+                        // Favorites
+                        div(data-tab-content="Favorites")
+                            +tab()
+                        // BTC
+                        div(data-tab-content="BTC")
+                            +tab()
+                        // ETH
+                        div(data-tab-content="ETH")
+                            +tab()
+                        // LTC
+                        div(data-tab-content="LTC")
+                            +tab()
+                        // USD
+                        div(data-tab-content="USD")
+                            +tab()
+                        // RUR
+                        div(data-tab-content="RUR")
+                            +tab()
+                    
                 .col-lg-8.col-md-12.col-sm-12.col-xs-12
                     +b.graph
                         img(src="assets/images/graph.png", alt="")
@@ -151,68 +172,78 @@ block content
                                 p
                                     strong You have: 0 USD
                                 p.color-light Switch to market order
-                .col-lg-4.col-md-12.col-sm-12.col-xs-12
-                    +b.b-top
-                        +e.H1.title MY ORDERS
-                        +b.filter
-                            +b.LABEL.radio-button
-                                input(type="radio", name="orders-filter", value="BTC")
-                                span BTC
-                            +b.LABEL.radio-button
-                                input(type="radio", name="orders-filter", value="USD")
-                                span USD
-                            +b.LABEL.radio-button
-                                input(type="radio", name="orders-filter", value="ALL", checked)
-                                span ALL
-                    +b.l-block(class="--dark --orders")
-                        table.table.js-datatable.responsive(data-page-size="10" sort="false")
-                            thead
-                                tr
-                                    th 
-                                        span Time
-                                    th 
-                                        span Type
-                                    th 
-                                        span Pair
-                                    th 
-                                        span Amount
-                                    th 
-                                        span Price
-                                    th 
-                                        span Value
-                                    th 
-                                        span Status
-                            tbody
-                                mixin tr2()
-                                    tr
-                                        td 01/11/2019
-                                        td Type
-                                        td USD/BTC
-                                        td 121.32 USD
-                                        td 121.32 USD
-                                        td 121.32 USD
-                                        td
-                                            +b.status(class="--green") Approved
-                                    tr
-                                        td 01/11/2019
-                                        td Type
-                                        td USD/BTC
-                                        td 121.32 USD
-                                        td 121.32 USD
-                                        td 121.32 USD
-                                        td
-                                            +b.status(class="--red") Delay
+                .col-lg-4.col-md-12.col-sm-12.col-xs-12.js-radio-tabs
+                        +b.b-top
+                            +e.H1.title MY ORDERS
+                            +b.filter
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="orders-filter", value="BTC")
+                                    span BTC
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="orders-filter", value="USD")
+                                    span USD
+                                +b.LABEL.radio-button
+                                    input(type="radio", name="orders-filter", value="ALL", checked)
+                                    span ALL
+                        +b.l-block(class="--dark --orders")
+                            mixin order-table()
+                                table.table.js-datatable.table--small.responsive(data-page-size="10" sort="false")
+                                    thead
+                                        tr
+                                            th 
+                                                span Time
+                                            th 
+                                                span Type
+                                            th 
+                                                span Pair
+                                            th 
+                                                span Amount
+                                            th 
+                                                span Price
+                                            th 
+                                                span Value
+                                            th 
+                                                span Status
+                                    tbody
+                                        mixin tr2()
+                                            tr
+                                                td 01/11/2019
+                                                td Type
+                                                td USD/BTC
+                                                td 121.32 USD
+                                                td 121.32 USD
+                                                td 121.32 USD
+                                                td
+                                                    +b.status(class="--green") Approved
+                                            tr
+                                                td 01/11/2019
+                                                td Type
+                                                td USD/BTC
+                                                td 121.32 USD
+                                                td 121.32 USD
+                                                td 121.32 USD
+                                                td
+                                                    +b.status(class="--red") Delay
 
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-                                +tr2()
-    
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                                        +tr2()
+                            // BTC
+                            div(data-tab-content="BTC")
+                                +order-table()
+                            // USD
+                            div(data-tab-content="USD")
+                                +order-table()
+                            // ALL
+                            div(data-tab-content="ALL")
+                                +order-table()
+        
     +b.SECTION.l-section.buy-sell-section
         +b.container(class="--p-large")
             .row

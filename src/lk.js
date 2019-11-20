@@ -38,6 +38,11 @@ if (tr_slider) {
             settings: {
                 slidesToShow: 4.5,
             }
+        }, {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 6,
+            }
         }]
     });
 }

@@ -7,7 +7,7 @@
     }
 
     table.dataTable {
-        width: 100%;
+        width: 99.5%;
         margin: 0 auto;
         clear: both;
         border-collapse: separate;
@@ -107,19 +107,28 @@
                     align-items: center;
 
                     &:after {
-                        content: '';
-                        width: 8px;
-                        height: 8px;
-                        border-right: solid 2px #000;
-                        border-bottom: 2px solid #000;
-                        opacity: 0.3;
-                        background-size: contain;
-                        display: inline-block;
-                        vertical-align: top;
-                        transform: rotate(45deg);
-                        margin: -5px 0 0 10px;
-                        flex-shrink: 0;
+                        content: "";
+                        width: 18px;
+                        height: 5px;
+                        display: block;
+                        background: url('/assets/images/sort.png') center no-repeat;
+                        margin-left: 5px;
                     }
+
+                    // &:after {
+                    //     content: '';
+                    //     width: 8px;
+                    //     height: 8px;
+                    //     border-right: solid 2px #000;
+                    //     border-bottom: 2px solid #000;
+                    //     opacity: 0.3;
+                    //     background-size: contain;
+                    //     display: inline-block;
+                    //     vertical-align: top;
+                    //     transform: rotate(45deg);
+                    //     margin: -5px 0 0 10px;
+                    //     flex-shrink: 0;
+                    // }
                 }
 
                 &:hover {
@@ -139,13 +148,20 @@
             .sorting_asc {
                 span {
                     &:after {
-                        transform: rotate(-136deg);
-                        margin-top: 5px;
+                        background: url('/assets/images/sort2.png') center no-repeat;
+                        // transform: rotate(-136deg);
+                        // margin-top: 5px;
                     }
                 }
             }
 
-            .sorting_desc {}
+            .sorting_desc {
+                span {
+                    &:after {
+                        background: url('/assets/images/sort3.png') center no-repeat;
+                    }
+                }
+            }
 
             // .sorting_asc_disabled {
             //     background-image: url("../images/sort_asc_disabled.png");

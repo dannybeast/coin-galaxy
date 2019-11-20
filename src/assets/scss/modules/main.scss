@@ -186,6 +186,7 @@ section,
             li {
                 a {
                     display: block;
+                    text-transform: uppercase;
                     padding: 15px;
                     font-size: 18px;
                     color: #000;
@@ -251,6 +252,7 @@ section,
 
     table {
         font-size: 14px;
+        white-space: nowrap;
 
         thead td,
         thead th,
@@ -469,6 +471,10 @@ section,
         width: 30px;
         height: 30px;
         flex-shrink: 0;
+
+        @media (max-width: $phone) {
+            margin-right: 8px;
+        }
     }
 
     img {
@@ -488,7 +494,29 @@ section,
     width: 100%;
 }
 
+.scrollbar-inner {
+    width: 100%;
+}
+
+.js-datatable {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.scr-y-none {
+    padding-bottom: 15px !important;
+
+    .scroll-y {
+        display: none !important;
+    }
+}
+
+// .scroll-wrapper>.scroll-content {
+//     overflow-y: hidden !important;
+// }
+
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
+
     border: none;
 }
 
@@ -685,3 +713,26 @@ section,
 }
 
 //
+.js-radio-tabs {
+    [data-tab-content] {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.glider-track {
+    scrollbar-width: none;
+}
+
+@-moz-document url-prefix() {
+    .glider-track {
+        margin-bottom: 17px;
+    }
+
+    .glider-wrap {
+        overflow: hidden;
+    }
+}

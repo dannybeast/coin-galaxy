@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 $(document).ready(function () {
-
+    //$('.scrollbar-inner').scrollbar();
     // slider intro
     let i_slider = $('.intro-slider');
     let i_slider_title = i_slider.find('.intro-slider__title');
@@ -42,14 +42,14 @@ $(document).ready(function () {
         i_slider_nav.eq(index).addClass('active');
 
         if (index === 0) {
-            i__prev.fadeOut();
+            i__prev.removeClass('show');
         } else {
-            i__prev.fadeIn();
+            i__prev.addClass('show');
         }
         if (index == i_slider_img.length - 1) {
-            i__next.fadeOut();
+            i__next.removeClass('show');
         } else {
-            i__next.fadeIn();
+            i__next.addClass('show');
         }
     }
 

@@ -173,10 +173,22 @@
     position: absolute;
     top: 50%;
     cursor: pointer;
+    opacity: 0.1;
+    pointer-events: none;
 
-    &:hover {
-      opacity: 0.5;
+    &.show {
+      opacity: 1;
+      pointer-events: all;
+
+      &:hover {
+        background: svg-load("../icons/arrow.svg", fill=#f2930b);
+        background-position: center;
+        background-size: 15px;
+        transform-origin: center;
+        background-repeat: no-repeat;
+      }
     }
+
   }
 
   ul {
@@ -492,7 +504,10 @@
 
 
 // graph
-.graph {
+.graph-small {
+  flex-shrink: 0;
+  min-width: 100px;
+
   img {
     display: block;
     max-width: 100%;
@@ -1296,6 +1311,10 @@
   padding-top: rem(60px);
   padding-bottom: rem(60px);
 
+  .glider-track {
+    margin-bottom: 0;
+  }
+
   &__block {
     background: #e0e3e8;
     padding: rem(45px) rem(90px);
@@ -1311,7 +1330,7 @@
         right: 100%;
         margin-right: 30px;
 
-        @media (max-width: $tablet) {
+        @media (max-width: $desktop-lg) {
           margin-right: 5px;
         }
       }
@@ -1321,7 +1340,7 @@
         margin-left: 30px;
         transform: translateY(-50%) rotate(180deg);
 
-        @media (max-width: $tablet) {
+        @media (max-width: $desktop-lg) {
           margin-left: 5px;
         }
       }
