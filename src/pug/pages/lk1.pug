@@ -7,6 +7,7 @@ block variables
     - var pageParent = 'lk1';
 block styles
     link(rel="stylesheet" href="assets/css/lk.css")
+    link(rel="stylesheet" href='https://www.amcharts.com/lib/3/plugins/export/export.css')
 block content
     include ../includes/modules/header-lk
     +header-lk()
@@ -17,7 +18,7 @@ block content
                 +e.H1.title Account summary
             .row
                 .col-lg-4.col-md-12.col-sm-12.col-xs-12
-                    +b.js-radio-tabs
+                    +b.js-radio-tabs.summary-module
                         +b.b-top
                             +b.filter
                                 +b.LABEL.radio-button(class="--star")
@@ -106,7 +107,7 @@ block content
                     
                 .col-lg-8.col-md-12.col-sm-12.col-xs-12
                     +b.graph
-                        img(src="assets/images/graph.png", alt="")
+                        #chartdiv.overflow-table
     +b.SECTION.l-section
         .container
             .row
@@ -442,3 +443,10 @@ block content
 block script
     script(src="assets/js/vendors.js")
     script(src="assets/js/lk.js")
+
+    //  Charts - amcharts 
+    script(src='assets/plugins/amcharts/amcharts.js')
+    script(src='assets/plugins/amcharts/serial.js')
+    script(src='assets/plugins/amcharts/amstock.js')
+    //  Candlestick Charts 
+    script(src='assets/plugins/amcharts/candlestick-charts.js')

@@ -6,6 +6,9 @@ import './js/modules/accordion';
 import './js/modules/mobile-menu-lk';
 import './js/modules/datatables';
 import './js/modules/copy';
+
+
+
 import 'glider-js';
 // SCSS
 import './assets/scss/lk.scss'
@@ -14,6 +17,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let loader = document.querySelector('.loader');
     loader.classList.add('hide');
 });
+let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+// graph height lk1
+
+function graphHeight() {
+    if ($('.summary-module').length && $('.graph').length) {
+
+
+        let height = $('.summary-module').height() - 28;
+        $('.overflow-table').css('height', height);
+
+    }
+}
+
+//-
 
 
 // slider trading-info
@@ -39,7 +57,7 @@ if (tr_slider) {
                 slidesToShow: 4.5,
             }
         }, {
-            breakpoint: 1200,
+            breakpoint: 1300,
             settings: {
                 slidesToShow: 6,
             }
@@ -48,7 +66,7 @@ if (tr_slider) {
 }
 
 $(document).ready(function () {
-
+    graphHeight();
     $('.scrollbar-inner').scrollbar();
 
     // animate
@@ -66,6 +84,8 @@ $(document).ready(function () {
         $(this).append(`<span class="s-table__indicator" style="width:${width}"></span>`)
     });
     //-
+});
 
-
+$(window).resize(function () {
+    graphHeight();
 });

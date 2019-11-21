@@ -7,6 +7,7 @@
     <title>COINGALAXY</title>
     <meta name="description" content="Coingalaxy - Lk1">
     <link rel="stylesheet" href="assets/css/lk.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
   </head>
   <body>
     <div class="wrapper" id="app">
@@ -94,7 +95,7 @@
             </div>
             <div class="row">
               <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                <div class="js-radio-tabs">
+                <div class="js-radio-tabs summary-module">
                   <div class="b-top">
                     <div class="filter">
                       <label class="radio-button radio-button--star">
@@ -1569,7 +1570,8 @@
                 </div>
               </div>
               <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                <div class="graph"><img src="assets/images/graph.png" alt="">
+                <div class="graph">
+                  <div class="overflow-table" id="chartdiv"></div>
                 </div>
               </div>
             </div>
@@ -3015,5 +3017,11 @@
     </div>
     <script src="assets/js/vendors.js"></script>
     <script src="assets/js/lk.js"></script>
+    <!--  Charts - amcharts -->
+    <script src="assets/plugins/amcharts/amcharts.js"></script>
+    <script src="assets/plugins/amcharts/serial.js"></script>
+    <script src="assets/plugins/amcharts/amstock.js"></script>
+    <!--  Candlestick Charts -->
+    <script src="assets/plugins/amcharts/candlestick-charts.js"></script>
   </body>
 </html>

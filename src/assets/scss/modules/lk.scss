@@ -202,9 +202,7 @@
             @media (max-width: $phone) {
                 font-size: 10px;
             }
-
         }
-
 
         &:first-child {
             padding-left: 0;
@@ -239,12 +237,84 @@
     }
 }
 
+.summary-module {
+    .b-top {
+        margin-bottom: 10px;
+    }
+
+    .filter {
+        margin-top: 12px !important;
+    }
+}
 
 .graph {
     background: #f0f1f4;
     height: 100%;
     border-radius: rem(12px);
-    overflow: hidden;
+    //overflow: hidden;
+    padding-bottom: 28px;
+
+    .amChartsInputField {
+        height: 27px;
+        font-size: 12px;
+        border-radius: 13px;
+        border: 1px solid #a7b8c9;
+        margin-top: 3px;
+
+        @media (max-width: $desktop-lg) {
+            display: none !important;
+        }
+    }
+
+    .overflow-table {
+        //height: 388px;
+        width: 100%;
+    }
+
+    .amChartsButton,
+    .amChartsButtonSelected {
+        border-radius: 1.1875rem;
+        display: inline-block !important;
+        border-radius: 20px;
+        background-color: #fff;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.6875rem;
+        color: #000;
+        padding: 0.4375rem 0.625rem;
+        cursor: pointer;
+        margin: 2.5px;
+    }
+
+    .amChartsButtonSelected {
+        border-color: $warning-color;
+        background: transparent;
+        color: #aeb6bf;
+    }
+
+    .amcharts-panels-div {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .amcharts-period-selector-div {
+        border-bottom: 2px solid #fff;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-family: $accentFont;
+        font-weight: 700;
+
+        @media (max-width: $desktop-lg) {
+            font-size: 0;
+        }
+
+        fieldset {
+            vertical-align: top;
+        }
+    }
 
     img {
         display: block;
@@ -254,6 +324,12 @@
     @media (max-width: $desktop) {
         margin-top: 30px;
         height: auto;
+
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 30px;
+
     }
 }
 
@@ -274,8 +350,6 @@
                 padding: 15px 1.5rem;
             }
         }
-
-
     }
 }
 
@@ -328,7 +402,6 @@
                 font-family: $accentFont;
                 color: rgba(#1a2c3e, 0.6);
                 border-bottom: 1px solid #000;
-
             }
         }
 
@@ -345,8 +418,6 @@
         &.table--small {
             font-size: 11px;
         }
-
-
     }
 
     &__title {
@@ -604,8 +675,6 @@
 
     &>* {
         margin: 2.5px;
-
-
     }
 }
 
@@ -651,7 +720,6 @@
                     }
                 }
             }
-
         }
     }
 
@@ -660,7 +728,6 @@
             height: 330px;
         }
     }
-
 
     &--lk {
         table {
@@ -924,8 +991,6 @@
             }
         }
 
-
-
         &:after {
             content: "";
             display: block;
@@ -959,8 +1024,6 @@
                     width: 100%;
                 }
             }
-
-
         }
 
         &:nth-child(2) {
