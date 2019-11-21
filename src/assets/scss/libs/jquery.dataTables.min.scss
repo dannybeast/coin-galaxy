@@ -148,7 +148,7 @@
             .sorting_asc {
                 span {
                     &:after {
-                        background: url('..//sort2.png') center no-repeat;
+                        background: url('../images/sort2.png') center no-repeat;
                         // transform: rotate(-136deg);
                         // margin-top: 5px;
                     }
@@ -158,7 +158,7 @@
             .sorting_desc {
                 span {
                     &:after {
-                        background: url('..//sort3.png') center no-repeat;
+                        background: url('../images/sort3.png') center no-repeat;
                     }
                 }
             }

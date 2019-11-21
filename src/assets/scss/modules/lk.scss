@@ -667,6 +667,10 @@
             margin-bottom: 20px;
             border-bottom: 1px solid #000;
 
+            @media (max-width: $phone) {
+                margin-bottom: 0;
+            }
+
             thead {
                 th {
                     letter-spacing: 1.16px;

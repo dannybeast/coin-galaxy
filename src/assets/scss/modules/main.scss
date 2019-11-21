@@ -226,7 +226,8 @@ section,
             display: flex !important;
             padding: 10px 0;
         }
-        .header-lk__buttons .btn--i-user span{
+
+        .header-lk__buttons .btn--i-user span {
             max-width: 130px;
         }
 
@@ -504,15 +505,26 @@ section,
 .js-datatable {
     width: 100%;
     white-space: nowrap;
+
+    .scroll-y {
+        display: none !important;
+    }
 }
-.dataTables_paginate{
-    margin-top: 25px !important;
+
+.dataTables_paginate {
+    //margin-top: 25px !important;
 }
 
 .scroll-content.scr-y-none {
     padding-bottom: 15px !important;
 
-    .scroll-y {
+    @media (max-width: $phone) {
+        padding-bottom: 5px !important;
+    }
+}
+
+.scr-y-none {
+    .scroll-element.scroll-y.scroll-scrolly_visible {
         display: none !important;
     }
 }

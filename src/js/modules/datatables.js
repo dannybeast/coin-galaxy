@@ -33,7 +33,6 @@ $(table).each(function () {
     });
 
     $(this).wrap('<div class="scrollbar-inner scr-y-none"></div>');
-
 });
 
 
