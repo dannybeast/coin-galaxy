@@ -1263,11 +1263,16 @@
         
     }
     &__title-column{
-        color: #bbc2c9;
+        color: #9ea7af;
         text-transform: uppercase;
         font-weight: 700;
+        text-decoration: underline;
         font-size: 12px;
         font-family: $accentFont;
+        &:hover{
+            text-decoration: none;
+            color: #000;
+        }
     }
     &__name{
         text-transform: uppercase;
