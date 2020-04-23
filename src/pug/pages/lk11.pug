@@ -1,0 +1,133 @@
+extends ../layout/main
+
+block variables
+    - var title = 'COINGALAXY';
+    - var description = 'Coingalaxy - Lk10';
+    - var pageClass = 'lk10';
+    - var pageParent = 'lk10';
+block styles
+    link(rel="stylesheet" href="assets/css/lk.css")
+block content
+    include ../includes/modules/header-lk
+    +header-lk()
+
+    +b.SECTION.l-section
+        .container
+            .row
+              div(class="col-lg-6 col-md-12 col-sm-12 col-xs-12")
+                +b.b-top
+                  +e.H1.title Депозитарий
+                +b.l-block
+                  +b.depository-info
+                    +e.UL.list
+                      +e.LI
+                        +e.P.name Всего токенов в депозитарии:
+                        +e.P.value 118870 CGC
+                      +e.LI
+                        +e.P.name Моих токенов:
+                        +e.P.value 0 CGC
+                      +e.LI
+                        +e.P.name В процентном соотношении:
+                        +e.P.value 0.00 %
+                    +e.buttons
+                      button(class="btn btn--warning btn--color-dark btn--small") Пополнить
+                      button(class="btn btn--dark btn--small") Снять
+                +b.l-block(class="--gray")
+                  +b.reports
+                    +e.top
+                      +e.H3.title Отчеты
+                      +e.P.title-column Дата отчета
+                    .scrollbar-inner
+                      +e.UL.list
+                        mixin li()
+                          +e.LI
+                            +e.P.name Название отчета
+                            +e.separator
+                            +e.P.date 20/02/2020
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+                        +li()
+
+
+              div(class="col-lg-6 col-md-12 col-sm-12 col-xs-12")
+                +b.b-top
+                  +e.H1.title Информация
+                +b.l-block.depository-info-table
+                  +b.TABLE.s-table.js-info-table
+                    thead
+                      tr
+                        th(class="width-table-1") Операция
+                        th Сумма
+                        th Дата
+                    tbody
+                      mixin tr()
+                        tr
+                          td(class="width-table-1")
+                            +b.trade-status(class="--up")
+                              span Пополнение депозатария
+                          td
+                            strong 334.324 CGC
+                          td 15/04/2020
+                        tr
+                          td(class="width-table-1")
+                            +b.trade-status(class="--down")
+                              span Вывод средств
+                          td
+                            strong 32434.3324 CGC
+                          td 10/04/2020
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+                      +tr()
+
+    +b.SECTION.advantages.l-section
+        .container
+          +e.H3.title Каждый пользователь биржи Coin-Galaxy может стать совладельцем и <span class="color-warning">получать дивиденды ежемесячно</span>
+          +e.row
+            +e.col
+              +b.advantage-item
+                +e.icon
+                  img(src="assets/icons/settings.svg", alt="")
+                +e.P.title 
+                  span Как это работает?
+                +e.text
+                  p По итогам каждого месяца мы суммируем вю прибыль биржи полученную с торговых операций и делим её пополам. 50% прибыли идёт на выплату дивидендов. Сумма распределяется пропорционально размеру депозита. Начисления происходят в той валюте, в которой была получена распределяемая прибыль.
+            +e.col
+              +b.advantage-item
+                +e.icon
+                  img(src="assets/icons/hands.svg", alt="")
+                +e.P.title 
+                  span Как стать совладельцем биржи?
+                +e.text
+                  p Мы предельно упростили этот процесс. Для того, чтобы участвовать в распределении прибыли биржи, достаточно перевести токены CGC со своего биржевого счёта в депозитарий.
+                  p После этого вы станете полноправным совладельцем биржи, будете получать ежемесячные отчёты о её работе и получать часть от прибыли Coin-Galaxy.
+            +e.col
+              +b.advantage-item
+                +e.icon
+                  img(src="assets/icons/star-line.svg", alt="")
+                +e.P.title 
+                  span В чём ценность CGC?
+                +e.text
+                  p Биржевой токен CGC помимо использования в депозитарии будет применяться для оплаты торговой комиссии с дисконтом, а также для оплаты листинга монет. Всего по контракту сгенерировано 1 000 000 монет. И их количество постепенно будет уменьшаться, так как 25% прибыли биржи будет направлена на выкуп токенов и их сжигание.
+block script
+    script(src="assets/js/vendors.js")
+    script(src="assets/js/lk.js")

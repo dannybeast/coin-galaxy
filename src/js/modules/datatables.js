@@ -58,6 +58,27 @@ let s_table = $(s_tableClass).DataTable({
     }
 });
 
+$('.js-info-table').DataTable({
+    "order": [],
+    "paging": false,
+    "sScrollX": '100%',
+    "scrollY": "350px",
+    "autoWidth": false,
+    responsive: true,
+    columnDefs: [{
+            responsivePriority: 1,
+            targets: 0
+        },
+        {
+            responsivePriority: 2,
+            targets: -1
+        }
+    ],
+    "fnInitComplete": function () {
+        $('.dataTables_scrollBody').addClass('scrollbar-inner');
+        $('.dataTables_scrollBody').scrollbar();
+    }
+});
 
 
 var t_datatable = $(t_table).DataTable({
